@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Editable IRS Form 1040</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 70px;
+    }
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      top: 56px;
+      left: 0;
+      width: 200px;
+      background-color: #f8f9fa;
+      padding-top: 20px;
+      border-right: 1px solid #dee2e6;
+    }
+    .content {
+      margin-left: 220px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <span class="navbar-brand">Form 1040</span>
+      <div class="d-flex">
+        <button class="btn btn-outline-light me-2" type="button">Save</button>
+        <button class="btn btn-outline-success" type="button">Calculate</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Left Sidebar -->
+  <div class="sidebar">
+    <h6 class="px-3">Filter by Year</h6>
+    <ul class="nav flex-column px-3">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">2024</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">2023</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">2022</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container content">
+    <form>
+      <div class="card my-4">
+        <div class="card-header">Filing Status</div>
+        <div class="card-body">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filingStatus" value="single" id="single">
+            <label class="form-check-label" for="single">Single</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filingStatus" value="marriedJoint" id="marriedJoint">
+            <label class="form-check-label" for="marriedJoint">Married filing jointly</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filingStatus" value="marriedSeparate" id="marriedSeparate">
+            <label class="form-check-label" for="marriedSeparate">Married filing separately</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filingStatus" value="headHousehold" id="headHousehold">
+            <label class="form-check-label" for="headHousehold">Head of household</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="filingStatus" value="widow" id="widow">
+            <label class="form-check-label" for="widow">Qualifying widow(er)</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card my-4">
+        <div class="card-header">Personal Information</div>
+        <div class="card-body row g-3">
+          <div class="col-md-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName">
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName">
+          </div>
+          <div class="col-md-6">
+            <label for="ssn" class="form-label">Social Security Number</label>
+            <input type="text" class="form-control" id="ssn">
+          </div>
+          <div class="col-md-6">
+            <label for="address" class="form-label">Street Address</label>
+            <input type="text" class="form-control" id="address">
+          </div>
+          <div class="col-md-4">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city">
+          </div>
+          <div class="col-md-4">
+            <label for="state" class="form-label">State</label>
+            <input type="text" class="form-control" id="state">
+          </div>
+          <div class="col-md-4">
+            <label for="zip" class="form-label">ZIP Code</label>
+            <input type="text" class="form-control" id="zip">
+          </div>
+        </div>
+      </div>
+
+      <div class="card my-4">
+        <div class="card-header">Income</div>
+        <div class="card-body row g-3">
+          <div class="col-md-6">
+            <label for="wages" class="form-label">Wages, salaries, tips</label>
+            <input type="number" class="form-control" id="wages">
+          </div>
+          <div class="col-md-6">
+            <label for="taxableInterest" class="form-label">Taxable interest</label>
+            <input type="number" class="form-control" id="taxableInterest">
+          </div>
+          <div class="col-md-6">
+            <label for="dividends" class="form-label">Ordinary dividends</label>
+            <input type="number" class="form-control" id="dividends">
+          </div>
+          <div class="col-md-6">
+            <label for="iraDistributions" class="form-label">IRA distributions</label>
+            <input type="number" class="form-control" id="iraDistributions">
+          </div>
+          <div class="col-md-6">
+            <label for="socialSecurity" class="form-label">Social security benefits</label>
+            <input type="number" class="form-control" id="socialSecurity">
+          </div>
+          <div class="col-md-6">
+            <label for="otherIncome" class="form-label">Other income</label>
+            <input type="number" class="form-control" id="otherIncome">
+          </div>
+        </div>
+      </div>
+
+      <div class="card my-4">
+        <div class="card-header">Adjustments and Deductions</div>
+        <div class="card-body row g-3">
+          <div class="col-md-6">
+            <label for="adjustments" class="form-label">Adjustments to income</label>
+            <input type="number" class="form-control" id="adjustments">
+          </div>
+          <div class="col-md-6">
+            <label for="standardDeduction" class="form-label">Standard or itemized deduction</label>
+            <input type="number" class="form-control" id="standardDeduction">
+          </div>
+        </div>
+      </div>
+
+      <div class="card my-4">
+        <div class="card-header">Tax and Credits</div>
+        <div class="card-body row g-3">
+          <div class="col-md-4">
+            <label for="taxableIncome" class="form-label">Taxable income</label>
+            <input type="number" class="form-control" id="taxableIncome">
+          </div>
+          <div class="col-md-4">
+            <label for="totalTax" class="form-label">Total tax</label>
+            <input type="number" class="form-control" id="totalTax">
+          </div>
+          <div class="col-md-4">
+            <label for="credits" class="form-label">Total credits</label>
+            <input type="number" class="form-control" id="credits">
+          </div>
+        </div>
+      </div>
+
+      <div class="card my-4">
+        <div class="card-header">Payments and Refund</div>
+        <div class="card-body row g-3">
+          <div class="col-md-4">
+            <label for="withheld" class="form-label">Federal income tax withheld</label>
+            <input type="number" class="form-control" id="withheld">
+          </div>
+          <div class="col-md-4">
+            <label for="refund" class="form-label">Refund</label>
+            <input type="number" class="form-control" id="refund">
+          </div>
+          <div class="col-md-4">
+            <label for="amountOwed" class="form-label">Amount you owe</label>
+            <input type="number" class="form-control" id="amountOwed">
+          </div>
+        </div>
+      </div>
+
+      <div class="card my-4">
+        <div class="card-header">Signature</div>
+        <div class="card-body row g-3">
+          <div class="col-md-6">
+            <label for="signature" class="form-label">Signature</label>
+            <input type="text" class="form-control" id="signature">
+          </div>
+          <div class="col-md-6">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date">
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mb-5">
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
