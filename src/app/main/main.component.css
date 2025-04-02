@@ -1,0 +1,177 @@
+#vb-main {
+  flex: 1;
+  /* overflow-y: auto; */
+  height: calc(100vh - 107px);
+}
+
+#vb-books-container {
+  height: calc(100vh - 107px);
+}
+
+.vb-books-drawer {
+  width: 275px;
+  position: absolute;
+  height: calc(100vh - 107px);
+  /* left: 32px; */
+}
+
+.vb-books-drawer-unpinned {
+  width: 275px;
+  overflow-y: auto;
+  height: calc(100vh - 107px);
+  padding: 0px 2px 2px 2px;
+  border: solid 2px var(--bs-secondary);;
+  background-color: var(--bs-dark);
+  box-shadow: inset 0 0 4px 2px var(--bs-secondary);
+}
+
+.vb-books-drawer-pinned {
+  width: 300px;
+  overflow-y: auto;
+  height: calc(100vh - 107px);
+  padding: 0px 2px 2px 2px;
+  border: solid 2px var(--bs-secondary);;
+  background-color: var(--bs-dark);
+  box-shadow: inset 0 0 4px 2px var(--bs-secondary);
+}
+
+.vb-bible-books-container {
+  width: 32px;
+}
+
+#vb-left-dock {
+  width: 32px;
+  height: calc(100vh - 107px);
+  background-color: var(--bs-dark);
+  /* border-right: 3px solid var(--bs-secondary); */
+}
+
+#vb-left-dock div {
+  width: 32px;
+  height: 140px; /* 280px; ADD THIS BACK FOR TWO BUTTONS - MAKE BIGGER FOR EACH NEW BUTTON */
+  border: 1px solid var(--bs-dark);
+  background-color: var(--bs-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#vb-left-dock div button {
+  width: 140px;
+  height: 32px;
+  padding: 0px;
+  margin-left: -55px;
+  transform: rotate(270deg);
+}
+
+.vb-content-col {
+  flex: 1.5 1 0;
+}
+
+mat-drawer-content {
+  overflow: visible !important;
+}
+
+.vb-tools-container {
+  width: 32px;
+}
+
+.vb-tools-drawer {
+  width: 475px;
+  position: absolute;
+  height: calc(100vh - 107px);
+  /* left: 32px; */
+}
+
+.vb-tools-drawer-unpinned {
+  width: 475px;
+  overflow-y: auto;
+  height: calc(100vh - 107px);
+  padding: 0px 2px 2px 2px;
+  border-left: solid 2px var(--bs-secondary);
+  background-color: var(--bs-dark);
+  box-shadow: inset 0 0 4px 2px var(--bs-secondary);
+}
+
+.vb-tools-drawer-pinned {
+  /* width: 490px; */
+  /* overflow-y: auto; */
+  height: calc(100vh - 107px);
+  padding: 0px 2px 2px 2px;
+  /* border: solid 2px var(--bs-secondary); */
+  background-color: var(--bs-dark);
+  /* box-shadow: inset 0 0 4px 2px var(--bs-secondary); */
+}
+
+#vb-right-dock {
+  width: 32px;
+  /* margin-left: auto; */
+  margin-right: 55px;
+  height: calc(100vh - 107px);
+  background-color: var(--bs-dark);
+}
+
+#vb-right-dock div {
+  width: 31px;
+  height: 600px; /* THIS IS THE SUM OF BUTTONS * THEIR WIDTH (ON LINE 139) */
+  border: 1px solid var(--bs-dark);
+  background-color: var(--bs-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#vb-right-dock div button {
+  width: 120px;
+  height: 31px;
+  padding: 0px;
+  margin-top: -132px;
+  transform-origin: bottom left;
+  transform: rotate(90deg);
+}
+
+/* #vb-right-dock div button:hover {
+  color: var(--bs-dark);
+  background-color: var(--bs-light) !important;
+} */
+
+#vb-tools-splitter {
+  width: 5px;
+  background-color: var(--bs-light);
+  cursor: col-resize;
+  flex-shrink: 0;
+}
+
+#vb-tools-splitter:hover {
+  width: 5px;
+  background-color: var(--bs-info);
+  cursor: col-resize;
+  flex-shrink: 0;
+}
+
+#vb-tools-splitter:active {
+  background-color: var(--bs-info);
+}
+
+#vb-tools-col {
+  flex: 1 1 0;
+  padding: 0;
+}
+
+#vb-tools-section {
+  overflow-y: auto;
+  height: calc(100vh - 191px);
+}
+
+.vb-tools-button:hover {
+  color: var(--bs-light);
+  /* background-image: none; */
+  /* background-color: var(--bs-light); */
+}
+
+.vb-tools-button-selected {
+  color: var(--bs-light);
+  border-top: 2px solid var(--bs-info);
+  /* background-image: none;
+  background-color: var(--bs-light); */
+}

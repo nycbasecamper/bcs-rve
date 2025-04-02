@@ -1,0 +1,90 @@
+<div id="vb-main" class="row g-0">
+  @if(!isLeftDockPinned) {
+    <div id="vb-books-col" class="col-md-2 vb-bible-books-container">
+      <section id="vb-left-dock">
+        <div>
+          <button class="btn btn-primary" (click)="vbbooksdrawer.toggle()">Bible Books</button>
+        </div>
+      </section>
+    </div>
+  } @else {
+    <div id="vb-books-col" class="col-auto vb-books-drawer-pinned">
+      <app-books [isPinned]="true"
+                  (pinToggled)="vbbooksdrawer.toggle(); onBooksPinToggled($event)"
+                  (chapterNumberSelected)="onChapterNumberSelected($event)"></app-books>
+    </div>
+    <!-- <div id="vb-books-splitter" class="col-auto"></div> -->
+  }
+  <div class="col">
+    <mat-drawer-container id="vb-books-container">
+      <mat-drawer class="vb-books-drawer" #vbbooksdrawer position="start" mode="over">
+        <div class="tab-content">
+          <div class="tab-pane fade show active vb-books-drawer-unpinned"
+                role="tabpanel" aria-labelledby="books-tab">
+            <app-books [isPinned]="false" 
+                        (pinToggled)="vbbooksdrawer.toggle(); onBooksPinToggled($event)" 
+                        (chapterNumberSelected)="vbbooksdrawer.close(); onChapterNumberSelected($event)"></app-books>
+          </div>
+        </div>
+      </mat-drawer>
+      <mat-drawer class="vb-tools-drawer" #vbtoolsdrawer position="end" mode="over">
+        <div class="tab-content">
+          <div class="tab-pane fade show active vb-tools-drawer-unpinned"
+                role="tabpanel" aria-labelledby="tools-tab">
+            <app-tools (pinToggled)="vbtoolsdrawer.toggle(); onToolsPinToggled($event)"
+                        (tabSelected)="onTabSelected($event)"></app-tools>
+          </div>
+        </div>
+      </mat-drawer>
+      <mat-drawer-content id="books-drawer-content">
+        <div class="row g-0">
+            @if(tabManager.isHomeTabActive) {
+
+            } @else if(tabManager.isChapterTabActive) {
+                <div id="vb-chapter-col" class="col vb-content-col">
+                  <app-chapter id="vb-primary-chapter" (verseActivated)="onVerseActivated($event)"></app-chapter>
+                </div>
+                @if(tabManager.chapterTab.isToolsPinned && tabManager.chapterTab.activeVerse) {
+                  <div id="vb-tools-splitter" class="col-auto"></div>
+                  <div class="col vb-tools-drawer-pinned vb-tools-col">
+                    <app-tools (loaded)="vbtoolsdrawer.close(); onToolsLoaded()"
+                                (pinToggled)="vbtoolsdrawer.toggle(); onToolsPinToggled($event)"
+                                (tabSelected)="onTabSelected($event)"></app-tools>
+                  </div>
+                }
+            } @else if(tabManager.isTextTabActive
+                || tabManager.isPhraseTabActive
+                || tabManager.isStrongsTabActive) {
+              <div id="vb-search-col" class="col vb-content-col">
+                <app-search id="vb-search" (verseActivated)="onVerseActivated($event)" (verseOpening)="onVerseOpening($event)"></app-search>
+              </div>
+              @if(tabManager.textTab.isToolsPinned
+                || tabManager.phraseTab.isToolsPinned
+                || tabManager.strongsTab.isToolsPinned) {
+                <div id="vb-tools-splitter" class="col-auto"></div>
+                <div class="col vb-tools-drawer-pinned vb-tools-col">
+                  <app-tools (loaded)="vbtoolsdrawer.close(); onToolsLoaded()"
+                              (pinToggled)="vbtoolsdrawer.toggle(); onToolsPinToggled($event)"
+                              (tabSelected)="onTabSelected($event)"></app-tools>
+                </div>
+              }
+            }
+          </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+  @if(!tabManager.isToolsPinned) {
+    <div class="col-auto vb-tools-container">
+      <section id="vb-right-dock">
+        <div>
+          @for(tab of toolsManager.getTabs(tabManager.activeTab.type); track $index) {
+            <button class="btn btn-primary vb-tools-button"
+              [class.vb-tools-button-selected]="tab.active"
+              [style.z-index]="tab.zindex"
+              (click)="vbtoolsdrawer.open(); toolTabClicked(tab)">{{ tab.text }}</button>
+          }
+        </div>
+      </section>
+    </div>
+  }
+</div>
