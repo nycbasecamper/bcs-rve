@@ -1,52 +1,52 @@
-#vb-main {
+#rve-main {
   flex: 1;
   /* overflow-y: auto; */
-  height: calc(100vh - 107px);
+  height: calc(100vh - 76px);
 }
 
-#vb-books-container {
-  height: calc(100vh - 107px);
+#rve-nav-container {
+  height: calc(100vh - 76px);
 }
 
-.vb-books-drawer {
+.rve-nav-drawer {
   width: 275px;
   position: absolute;
-  height: calc(100vh - 107px);
+  height: calc(100vh - 76px);
   /* left: 32px; */
 }
 
-.vb-books-drawer-unpinned {
+.rve-nav-drawer-unpinned {
   width: 275px;
   overflow-y: auto;
-  height: calc(100vh - 107px);
+  height: calc(100vh - 76px);
   padding: 0px 2px 2px 2px;
   border: solid 2px var(--bs-secondary);;
   background-color: var(--bs-dark);
   box-shadow: inset 0 0 4px 2px var(--bs-secondary);
 }
 
-.vb-books-drawer-pinned {
+.rve-nav-drawer-pinned {
   width: 300px;
   overflow-y: auto;
-  height: calc(100vh - 107px);
+  height: calc(100vh - 76px);
   padding: 0px 2px 2px 2px;
   border: solid 2px var(--bs-secondary);;
   background-color: var(--bs-dark);
   box-shadow: inset 0 0 4px 2px var(--bs-secondary);
 }
 
-.vb-bible-books-container {
+.rve-nav-container {
   width: 32px;
 }
 
-#vb-left-dock {
+#rve-left-dock {
   width: 32px;
-  height: calc(100vh - 107px);
+  height: calc(100vh - 76px);
   background-color: var(--bs-dark);
   /* border-right: 3px solid var(--bs-secondary); */
 }
 
-#vb-left-dock div {
+#rve-left-dock div {
   width: 32px;
   height: 140px; /* 280px; ADD THIS BACK FOR TWO BUTTONS - MAKE BIGGER FOR EACH NEW BUTTON */
   border: 1px solid var(--bs-dark);
@@ -56,7 +56,7 @@
   justify-content: space-around;
 }
 
-#vb-left-dock div button {
+#rve-left-dock div button {
   width: 140px;
   height: 32px;
   padding: 0px;
@@ -64,7 +64,12 @@
   transform: rotate(270deg);
 }
 
-.vb-content-col {
+#rve-main {
+  overflow-y: auto;
+  height: calc(100vh - 76px);
+}
+
+.rve-content-col {
   flex: 1.5 1 0;
 }
 
@@ -72,18 +77,18 @@ mat-drawer-content {
   overflow: visible !important;
 }
 
-.vb-tools-container {
+.rve-tools-container {
   width: 32px;
 }
 
-.vb-tools-drawer {
+.rve-tools-drawer {
   width: 475px;
   position: absolute;
   height: calc(100vh - 107px);
   /* left: 32px; */
 }
 
-.vb-tools-drawer-unpinned {
+.rve-tools-drawer-unpinned {
   width: 475px;
   overflow-y: auto;
   height: calc(100vh - 107px);
@@ -93,7 +98,7 @@ mat-drawer-content {
   box-shadow: inset 0 0 4px 2px var(--bs-secondary);
 }
 
-.vb-tools-drawer-pinned {
+.rve-tools-drawer-pinned {
   /* width: 490px; */
   /* overflow-y: auto; */
   height: calc(100vh - 107px);
@@ -103,7 +108,7 @@ mat-drawer-content {
   /* box-shadow: inset 0 0 4px 2px var(--bs-secondary); */
 }
 
-#vb-right-dock {
+#rve-right-dock {
   width: 32px;
   /* margin-left: auto; */
   margin-right: 55px;
@@ -111,7 +116,7 @@ mat-drawer-content {
   background-color: var(--bs-dark);
 }
 
-#vb-right-dock div {
+#rve-right-dock div {
   width: 31px;
   height: 600px; /* THIS IS THE SUM OF BUTTONS * THEIR WIDTH (ON LINE 139) */
   border: 1px solid var(--bs-dark);
@@ -121,7 +126,7 @@ mat-drawer-content {
   justify-content: space-around;
 }
 
-#vb-right-dock div button {
+#rve-right-dock div button {
   width: 120px;
   height: 31px;
   padding: 0px;
@@ -130,48 +135,87 @@ mat-drawer-content {
   transform: rotate(90deg);
 }
 
-/* #vb-right-dock div button:hover {
+/* #rve-right-dock div button:hover {
   color: var(--bs-dark);
   background-color: var(--bs-light) !important;
 } */
 
-#vb-tools-splitter {
+#rve-tools-splitter {
   width: 5px;
   background-color: var(--bs-light);
   cursor: col-resize;
   flex-shrink: 0;
 }
 
-#vb-tools-splitter:hover {
+#rve-tools-splitter:hover {
   width: 5px;
   background-color: var(--bs-info);
   cursor: col-resize;
   flex-shrink: 0;
 }
 
-#vb-tools-splitter:active {
+#rve-tools-splitter:active {
   background-color: var(--bs-info);
 }
 
-#vb-tools-col {
+#rve-tools-col {
   flex: 1 1 0;
   padding: 0;
 }
 
-#vb-tools-section {
+#rve-tools-section {
   overflow-y: auto;
   height: calc(100vh - 191px);
 }
 
-.vb-tools-button:hover {
+.rve-tools-button:hover {
   color: var(--bs-light);
   /* background-image: none; */
   /* background-color: var(--bs-light); */
 }
 
-.vb-tools-button-selected {
+.rve-tools-button-selected {
   color: var(--bs-light);
   border-top: 2px solid var(--bs-info);
   /* background-image: none;
   background-color: var(--bs-light); */
+}
+
+
+
+
+
+
+.form-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+.full-width {
+  width: 100%;
+}
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  min-height: 40px !important;
+}
+
+.mat-input-element {
+  font-size: 14px !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  line-height: 1.2;
 }

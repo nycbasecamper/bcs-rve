@@ -1,0 +1,20 @@
+.rve-pin-button {
+  margin-right: 4px;
+}
+
+#rve-nav {
+  top: 0px;
+  height: 56px;
+  z-index: 10;
+  text-align: center;
+  position: sticky;
+
+  display: flex;
+  align-items: center; /* Vertically align items */
+  justify-content: space-between; /* Text in center, image to the right */
+}
+
+.rve-title {
+  flex-grow: 1; /* Allows the text to take up remaining space */
+  text-align: center; /* Centers the text */
+}

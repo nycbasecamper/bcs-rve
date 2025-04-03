@@ -1,0 +1,17 @@
+nav {
+  border-bottom: .5px solid var(--bs-primary);
+}
+
+#rve-navbar-brand {
+  border-right: none;
+}
+
+#rve-logo {
+  width: 38px;
+  height: 38px;
+}
+
+#rve-title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
