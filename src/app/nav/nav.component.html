@@ -16,24 +16,53 @@
     }
   </div>
   <div>
-    <div class="accordion-item">
-      <!-- @for(book of tabManager.ot; track book.bookNumber) {
-        <button #otaccordionitem type="button" data-bs-toggle="collapse"
-                  class="accordion-button collapsed rve-ot-book-title"
-                  [attr.data-bs-target]="'#book-' + book.bookNumber"
-                  [attr.aria-controls]="'book-' + book.bookNumber">
-          {{ book.bookTitle }}
-        </button>
-
-        <div [id]="'book-' + book.bookNumber" #otaccordionbody
-              class="accordion-collapse collapse"
-              aria-labelledby="rve-chapter-heading" 
-              data-bs-parent="#rve-chapter-accordion">
-          <div class="accordion-body rve-accordion-body">
-            <app-chapters [book]="book" (chapterNumberSelected)="onChapterNumberSelected($event)"></app-chapters>
+    <div class="container py-4">
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="taxpayer" class="form-label">Taxpayer Name</label>
+          <input type="text" class="form-control" id="taxpayer" placeholder="Enter taxpayer name">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="locator" class="form-label">Locator</label>
+          <input type="text" class="form-control" id="locator" placeholder="Enter locator ID or code">
+        </div>
+      </div>
+    
+      <div class="row mb-3">
+        <div class="col-12">
+          <label class="form-label">Select Tax Year</label>
+          <div class="d-flex flex-wrap gap-3">
+            <!-- Dynamically render more years if needed -->
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="taxYear" id="year2024" value="2024" checked>
+              <label class="form-check-label" for="year2024">2024</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="taxYear" id="year2023" value="2023">
+              <label class="form-check-label" for="year2023">2023</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="taxYear" id="year2022" value="2022">
+              <label class="form-check-label" for="year2022">2022</label>
+            </div>
+            <!-- Add more years as needed -->
           </div>
         </div>
-      } -->
-    </div>
+      </div>
+    
+      <div class="row mb-3">
+        <div class="col-12">
+          <label for="searchForms" class="form-label">Search IRS Tax Forms</label>
+          <div class="input-group">
+            <input type="search" class="form-control" id="searchForms" placeholder="Search by form name or number...">
+            <span class="input-group-text">
+              <i class="bi bi-search"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>    
   </div>
 </div>

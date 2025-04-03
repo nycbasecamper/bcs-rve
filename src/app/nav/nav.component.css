@@ -14,7 +14,7 @@
   justify-content: space-between; /* Text in center, image to the right */
 }
 
-.rve-title {
+.rve-nav-title {
   flex-grow: 1; /* Allows the text to take up remaining space */
   text-align: center; /* Centers the text */
 }

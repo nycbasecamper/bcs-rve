@@ -4,19 +4,24 @@
   height: calc(100vh - 76px);
 }
 
+.rve-nav-title {
+  flex-grow: 1; /* Allows the text to take up remaining space */
+  text-align: center; /* Centers the text */
+}
+
 #rve-nav-container {
   height: calc(100vh - 76px);
 }
 
 .rve-nav-drawer {
-  width: 275px;
+  width: 300px;
   position: absolute;
   height: calc(100vh - 76px);
   /* left: 32px; */
 }
 
 .rve-nav-drawer-unpinned {
-  width: 275px;
+  width: 300px;
   overflow-y: auto;
   height: calc(100vh - 76px);
   padding: 0px 2px 2px 2px;
@@ -69,118 +74,11 @@
   height: calc(100vh - 76px);
 }
 
-.rve-content-col {
-  flex: 1.5 1 0;
-}
+
 
 mat-drawer-content {
   overflow: visible !important;
 }
-
-.rve-tools-container {
-  width: 32px;
-}
-
-.rve-tools-drawer {
-  width: 475px;
-  position: absolute;
-  height: calc(100vh - 107px);
-  /* left: 32px; */
-}
-
-.rve-tools-drawer-unpinned {
-  width: 475px;
-  overflow-y: auto;
-  height: calc(100vh - 107px);
-  padding: 0px 2px 2px 2px;
-  border-left: solid 2px var(--bs-secondary);
-  background-color: var(--bs-dark);
-  box-shadow: inset 0 0 4px 2px var(--bs-secondary);
-}
-
-.rve-tools-drawer-pinned {
-  /* width: 490px; */
-  /* overflow-y: auto; */
-  height: calc(100vh - 107px);
-  padding: 0px 2px 2px 2px;
-  /* border: solid 2px var(--bs-secondary); */
-  background-color: var(--bs-dark);
-  /* box-shadow: inset 0 0 4px 2px var(--bs-secondary); */
-}
-
-#rve-right-dock {
-  width: 32px;
-  /* margin-left: auto; */
-  margin-right: 55px;
-  height: calc(100vh - 107px);
-  background-color: var(--bs-dark);
-}
-
-#rve-right-dock div {
-  width: 31px;
-  height: 600px; /* THIS IS THE SUM OF BUTTONS * THEIR WIDTH (ON LINE 139) */
-  border: 1px solid var(--bs-dark);
-  background-color: var(--bs-dark);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-#rve-right-dock div button {
-  width: 120px;
-  height: 31px;
-  padding: 0px;
-  margin-top: -132px;
-  transform-origin: bottom left;
-  transform: rotate(90deg);
-}
-
-/* #rve-right-dock div button:hover {
-  color: var(--bs-dark);
-  background-color: var(--bs-light) !important;
-} */
-
-#rve-tools-splitter {
-  width: 5px;
-  background-color: var(--bs-light);
-  cursor: col-resize;
-  flex-shrink: 0;
-}
-
-#rve-tools-splitter:hover {
-  width: 5px;
-  background-color: var(--bs-info);
-  cursor: col-resize;
-  flex-shrink: 0;
-}
-
-#rve-tools-splitter:active {
-  background-color: var(--bs-info);
-}
-
-#rve-tools-col {
-  flex: 1 1 0;
-  padding: 0;
-}
-
-#rve-tools-section {
-  overflow-y: auto;
-  height: calc(100vh - 191px);
-}
-
-.rve-tools-button:hover {
-  color: var(--bs-light);
-  /* background-image: none; */
-  /* background-color: var(--bs-light); */
-}
-
-.rve-tools-button-selected {
-  color: var(--bs-light);
-  border-top: 2px solid var(--bs-info);
-  /* background-image: none;
-  background-color: var(--bs-light); */
-}
-
 
 
 
@@ -192,15 +90,18 @@ mat-drawer-content {
   flex-direction: column;
   gap: 24px;
 }
+
 .form-row {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 12px;
 }
+
 .full-width {
   width: 100%;
 }
+
 .radio-group {
   display: flex;
   flex-direction: column;

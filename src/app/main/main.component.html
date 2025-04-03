@@ -2,7 +2,7 @@
   @if(!isLeftDockPinned) {
     <div id="rve-nav-col" class="col-md-2 rve-nav-container">
       <section id="rve-left-dock">
-        <div>
+        <div class="rve-nav-title">
           <button class="btn btn-primary" (click)="rvenavdrawer.toggle()">NAVIGATION</button>
         </div>
       </section>
@@ -18,9 +18,7 @@
         <div class="tab-content">
           <div class="tab-pane fade show active rve-nav-drawer-unpinned"
                 role="tabpanel" aria-labelledby="nav-tab">
-
-                NAVIGATION CONTENT HERE
-
+            <app-nav [isPinned]="false" (pinToggled)="rvenavdrawer.toggle(); onNavPinToggled($event)"></app-nav>
           </div>
         </div>
       </mat-drawer>
