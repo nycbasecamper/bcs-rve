@@ -1,5 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -8,9 +9,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NavComponent } from '../nav/nav.component';
+import { Person } from '../../models/Person';
 
 @Component({
     selector: 'app-main',
@@ -19,6 +20,7 @@ import { NavComponent } from '../nav/nav.component';
     standalone: true,
     imports: [
       CommonModule,
+      FormsModule,
       MatSidenavModule,
       MatCardModule,
       MatFormFieldModule,
@@ -33,11 +35,13 @@ import { NavComponent } from '../nav/nav.component';
 export class MainComponent {
   isLeftDockPinned: boolean = true;
 
-  @ViewChild('drawercontent') drawercontent!: ElementRef;
+  payer: Person = new Person();
 
-  dependents: any;
-
-  constructor() {}
+  constructor() {
+    this.payer.taxYearStart = "1/2024";
+    this.payer.taxYearEnd = "12/2024";
+    this.payer.firstName = "John";
+  }
 
   onNavPinToggled(value: boolean) {
     this.isLeftDockPinned = value;

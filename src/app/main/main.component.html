@@ -25,7 +25,7 @@
       <mat-drawer-content id="nav-drawer-content">
         <div id="rve-main" class="row g-0">
           <!-- tax-form.component.html -->
-          <form class="tax-form">
+          <!-- <form class="tax-form" (ngSubmit)="onSubmit()"> -->
             <mat-card class="p-4 mb-4">
               <mat-card-title>U.S. Individual Income Tax Return - 2024</mat-card-title>
 
@@ -44,13 +44,13 @@
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Tax year beginning</mat-label>
-                            <input matInput formControlName="taxYearStart">
+                            <input matInput [(ngModel)]="payer.taxYearStart">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Tax year ending</mat-label>
-                            <input matInput formControlName="taxYearEnd">
+                            <input matInput [(ngModel)]="payer.taxYearEnd">
                           </mat-form-field>
                         </div>
                       </div>
@@ -71,19 +71,19 @@
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Your first name and middle initial</mat-label>
-                            <input matInput formControlName="firstName">
+                            <input matInput name="firstName" [(ngModel)]="payer.firstName">
                           </mat-form-field>
                         </div>
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Last name</mat-label>
-                            <input matInput formControlName="lastName">
+                            <input matInput [(ngModel)]="payer.lastName">
                           </mat-form-field>
                         </div>
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Social Security Number</mat-label>
-                            <input matInput formControlName="ssn">
+                            <input matInput [(ngModel)]="payer.ssn">
                           </mat-form-field>
                         </div>
                       </div>
@@ -91,19 +91,19 @@
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Spouse's first name and middle initial</mat-label>
-                            <input matInput formControlName="spouseFirstName">
+                            <input matInput [(ngModel)]="payer.spouseFirstName">
                           </mat-form-field>
                         </div>
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Last name</mat-label>
-                            <input matInput formControlName="spouseLastName">
+                            <input matInput [(ngModel)]="payer.spouseLastName">
                           </mat-form-field>
                         </div>
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Spouse's Social Security Number</mat-label>
-                            <input matInput formControlName="spouseSSN">
+                            <input matInput [(ngModel)]="payer.spouseSSN">
                           </mat-form-field>
                         </div>
                       </div>
@@ -123,26 +123,26 @@
                       <div class="mb-3">
                         <mat-form-field appearance="fill" class="w-100">
                           <mat-label>Street Address</mat-label>
-                          <input matInput formControlName="street">
+                          <input matInput [(ngModel)]="payer.street">
                         </mat-form-field>
                       </div>
                       <div class="row mb-3">
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>City</mat-label>
-                            <input matInput formControlName="city">
+                            <input matInput [(ngModel)]="payer.city">
                           </mat-form-field>
                         </div>
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>State</mat-label>
-                            <input matInput formControlName="state">
+                            <input matInput [(ngModel)]="payer.state">
                           </mat-form-field>
                         </div>
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>ZIP code</mat-label>
-                            <input matInput formControlName="zip">
+                            <input matInput [(ngModel)]="payer.zip">
                           </mat-form-field>
                         </div>
                       </div>
@@ -159,7 +159,7 @@
                   </h2>
                   <div id="collapseFiling" class="accordion-collapse collapse" aria-labelledby="headingFiling" data-bs-parent="#taxFormAccordion">
                     <div class="accordion-body">
-                      <mat-radio-group formControlName="filingStatus" class="d-flex flex-column gap-1">
+                      <mat-radio-group [(ngModel)]="payer.filingStatus" class="d-flex flex-column gap-1">
                         <mat-radio-button value="single">Single</mat-radio-button>
                         <mat-radio-button value="mfj">Married filing jointly</mat-radio-button>
                         <mat-radio-button value="mfs">Married filing separately</mat-radio-button>
@@ -179,7 +179,7 @@
                   </h2>
                   <div id="collapseAssets" class="accordion-collapse collapse" aria-labelledby="headingAssets" data-bs-parent="#taxFormAccordion">
                     <div class="accordion-body">
-                      <mat-radio-group formControlName="digitalAssets">
+                      <mat-radio-group [(ngModel)]="payer.digitalAssets">
                         <mat-radio-button value="yes">Yes</mat-radio-button>
                         <mat-radio-button value="no">No</mat-radio-button>
                       </mat-radio-group>
@@ -197,8 +197,8 @@
                   <div id="collapseDeduction" class="accordion-collapse collapse" aria-labelledby="headingDeduction" data-bs-parent="#taxFormAccordion">
                     <div class="accordion-body">
                       <div class="d-flex flex-column gap-1">
-                        <mat-checkbox formControlName="claimedAsDependent">Someone can claim you as a dependent</mat-checkbox>
-                        <mat-checkbox formControlName="claimedSpouse">Someone can claim your spouse</mat-checkbox>
+                        <mat-checkbox [(ngModel)]="payer.claimedAsDependent">Someone can claim you as a dependent</mat-checkbox>
+                        <mat-checkbox [(ngModel)]="payer.claimedSpouse">Someone can claim your spouse</mat-checkbox>
                       </div>
                     </div>
                   </div>
@@ -215,12 +215,12 @@
                     <div class="accordion-body">
                       <div class="row mb-3">
                         <div class="col-md-6">
-                          <mat-checkbox formControlName="youOlder">You were born before Jan 2, 1960</mat-checkbox><br>
-                          <mat-checkbox formControlName="youBlind">You are blind</mat-checkbox>
+                          <mat-checkbox [(ngModel)]="payer.youOlder">You were born before Jan 2, 1960</mat-checkbox><br>
+                          <mat-checkbox [(ngModel)]="payer.youBlind">You are blind</mat-checkbox>
                         </div>
                         <div class="col-md-6">
-                          <mat-checkbox formControlName="spouseOlder">Spouse was born before Jan 2, 1960</mat-checkbox><br>
-                          <mat-checkbox formControlName="spouseBlind">Spouse is blind</mat-checkbox>
+                          <mat-checkbox [(ngModel)]="payer.spouseOlder">Spouse was born before Jan 2, 1960</mat-checkbox><br>
+                          <mat-checkbox [(ngModel)]="payer.spouseBlind">Spouse is blind</mat-checkbox>
                         </div>
                       </div>
                     </div>
@@ -236,33 +236,34 @@
                   </h2>
                   <div id="collapseDependents" class="accordion-collapse collapse" aria-labelledby="headingDependents" data-bs-parent="#taxFormAccordion">
                     <div class="accordion-body">
-                      <!-- <div *ngFor="let dep of dependents.controls; let i = index" class="row mb-3"> -->
-                      <div class="row mb-3">
-                        <div class="col-md-3">
-                          <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>First Name</mat-label>
-                            <input matInput formControlName="firstName">
-                          </mat-form-field>
-                        </div>
-                        <div class="col-md-3">
-                          <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Last Name</mat-label>
-                            <input matInput formControlName="lastName">
-                          </mat-form-field>
-                        </div>
-                        <div class="col-md-3">
-                          <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>SSN</mat-label>
-                            <input matInput formControlName="ssn">
-                          </mat-form-field>
-                        </div>
-                        <div class="col-md-3">
-                          <mat-form-field appearance="fill" class="w-100">
-                            <mat-label>Relationship</mat-label>
-                            <input matInput formControlName="relationship">
-                          </mat-form-field>
-                          <mat-checkbox formControlName="childTaxCredit">Child Tax Credit</mat-checkbox>
-                          <mat-checkbox formControlName="otherDependentCredit">Other Dependent Credit</mat-checkbox>
+                      <div *ngFor="let dep of payer.dependents; let i = index" class="row mb-3">
+                        <div class="row mb-3">
+                          <div class="col-md-3">
+                            <mat-form-field appearance="fill" class="w-100">
+                              <mat-label>First Name</mat-label>
+                              <input matInput [(ngModel)]="dep.firstName">
+                            </mat-form-field>
+                          </div>
+                          <div class="col-md-3">
+                            <mat-form-field appearance="fill" class="w-100">
+                              <mat-label>Last Name</mat-label>
+                              <input matInput [(ngModel)]="dep.lastName">
+                            </mat-form-field>
+                          </div>
+                          <div class="col-md-3">
+                            <mat-form-field appearance="fill" class="w-100">
+                              <mat-label>SSN</mat-label>
+                              <input matInput [(ngModel)]="dep.ssn">
+                            </mat-form-field>
+                          </div>
+                          <div class="col-md-3">
+                            <mat-form-field appearance="fill" class="w-100">
+                              <mat-label>Relationship</mat-label>
+                              <input matInput [(ngModel)]="dep.relationship">
+                            </mat-form-field>
+                            <mat-checkbox [(ngModel)]="dep.childTaxCredit">Child Tax Credit</mat-checkbox>
+                            <mat-checkbox [(ngModel)]="dep.otherDependentCredit">Other Dependent Credit</mat-checkbox>
+                          </div>
                         </div>
                       </div>
                       <button mat-stroked-button type="button" (click)="addDependent()">Add Dependent</button>
@@ -283,43 +284,43 @@
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>W-2 Wages (Line 1a)</mat-label>
-                            <input matInput type="number" formControlName="wages1a">
+                            <input matInput type="number" [(ngModel)]="payer.wages1a">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Tip Income (Line 1c)</mat-label>
-                            <input matInput type="number" formControlName="tips1c">
+                            <input matInput type="number" [(ngModel)]="payer.tips1c">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Taxable Interest (2b)</mat-label>
-                            <input matInput type="number" formControlName="interest2b">
+                            <input matInput type="number" [(ngModel)]="payer.interest2b">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Ordinary Dividends (3b)</mat-label>
-                            <input matInput type="number" formControlName="dividends3b">
+                            <input matInput type="number" [(ngModel)]="payer.dividends3b">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>IRA Distributions (4b)</mat-label>
-                            <input matInput type="number" formControlName="ira4b">
+                            <input matInput type="number" [(ngModel)]="payer.ira4b">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Social Security (6b)</mat-label>
-                            <input matInput type="number" formControlName="ss6b">
+                            <input matInput type="number" [(ngModel)]="payer.ss6b">
                           </mat-form-field>
                         </div>
                         <div class="col-md-12">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Total Income (Line 9)</mat-label>
-                            <input matInput type="number" formControlName="totalIncome">
+                            <input matInput type="number" [(ngModel)]="payer.totalIncome">
                           </mat-form-field>
                         </div>
                       </div>
@@ -340,13 +341,13 @@
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Total Tax (Line 24)</mat-label>
-                            <input matInput type="number" formControlName="totalTax">
+                            <input matInput type="number" [(ngModel)]="payer.totalTax">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Child Tax Credit (Line 19)</mat-label>
-                            <input matInput type="number" formControlName="childTaxCredit">
+                            <input matInput type="number" [(ngModel)]="payer.childTaxCredit">
                           </mat-form-field>
                         </div>
                       </div>
@@ -367,25 +368,25 @@
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Federal Tax Withheld (Line 25d)</mat-label>
-                            <input matInput type="number" formControlName="withheldTax">
+                            <input matInput type="number" [(ngModel)]="payer.withheldTax">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Refund Amount (Line 35a)</mat-label>
-                            <input matInput type="number" formControlName="refundAmount">
+                            <input matInput type="number" [(ngModel)]="payer.refundAmount">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Routing Number</mat-label>
-                            <input matInput formControlName="routingNumber">
+                            <input matInput [(ngModel)]="payer.routingNumber">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Account Number</mat-label>
-                            <input matInput formControlName="accountNumber">
+                            <input matInput [(ngModel)]="payer.accountNumber">
                           </mat-form-field>
                         </div>
                       </div>
@@ -406,13 +407,13 @@
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Amount You Owe (Line 37)</mat-label>
-                            <input matInput type="number" formControlName="amountOwed">
+                            <input matInput type="number" [(ngModel)]="payer.amountOwed">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Estimated Tax Penalty (Line 38)</mat-label>
-                            <input matInput type="number" formControlName="estimatedPenalty">
+                            <input matInput type="number" [(ngModel)]="payer.estimatedPenalty">
                           </mat-form-field>
                         </div>
                       </div>
@@ -429,24 +430,24 @@
                   </h2>
                   <div id="collapseDesignee" class="accordion-collapse collapse" aria-labelledby="headingDesignee" data-bs-parent="#taxFormAccordion">
                     <div class="accordion-body">
-                      <mat-checkbox formControlName="designeePermission">Allow a third party to discuss this return with the IRS</mat-checkbox>
+                      <mat-checkbox [(ngModel)]="payer.designeePermission">Allow a third party to discuss this return with the IRS</mat-checkbox>
                       <div class="row mt-3">
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Designee Name</mat-label>
-                            <input matInput formControlName="designeeName">
+                            <input matInput [(ngModel)]="payer.designeeName">
                           </mat-form-field>
                         </div>
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Phone Number</mat-label>
-                            <input matInput formControlName="designeePhone">
+                            <input matInput [(ngModel)]="payer.designeePhone">
                           </mat-form-field>
                         </div>
                         <div class="col-md-4">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Designee PIN</mat-label>
-                            <input matInput formControlName="designeePIN">
+                            <input matInput [(ngModel)]="payer.designeePIN">
                           </mat-form-field>
                         </div>
                       </div>
@@ -467,23 +468,21 @@
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Your Occupation</mat-label>
-                            <input matInput formControlName="yourOccupation">
+                            <input matInput [(ngModel)]="payer.yourOccupation">
                           </mat-form-field>
                         </div>
                         <div class="col-md-6">
                           <mat-form-field appearance="fill" class="w-100">
                             <mat-label>Spouse Occupation</mat-label>
-                            <input matInput formControlName="spouseOccupation">
+                            <input matInput [(ngModel)]="payer.spouseOccupation">
                           </mat-form-field>
                         </div>
                       </div>
-                      <mat-checkbox formControlName="allowThirdParty">I authorize a third party to discuss this return with the IRS</mat-checkbox>
+                      <mat-checkbox [(ngModel)]="payer.allowThirdParty">I authorize a third party to discuss this return with the IRS</mat-checkbox>
                     </div>
                   </div>
                 </div>
               </div>
-              
-
 
               <!-- Submit -->
               <div class="text-center mt-4">
@@ -491,169 +490,7 @@
               </div>
 
             </mat-card>
-          </form>
-
-          <!-- <div class="container content">
-            <form>
-              <div class="card my-4">
-                <div class="card-header">Filing Status</div>
-                <div class="card-body">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="filingStatus" value="single" id="single">
-                    <label class="form-check-label" for="single">Single</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="filingStatus" value="marriedJoint" id="marriedJoint">
-                    <label class="form-check-label" for="marriedJoint">Married filing jointly</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="filingStatus" value="marriedSeparate" id="marriedSeparate">
-                    <label class="form-check-label" for="marriedSeparate">Married filing separately</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="filingStatus" value="headHousehold" id="headHousehold">
-                    <label class="form-check-label" for="headHousehold">Head of household</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="filingStatus" value="widow" id="widow">
-                    <label class="form-check-label" for="widow">Qualifying widow(er)</label>
-                  </div>
-                </div>
-              </div>
-        
-              <div class="card my-4">
-                <div class="card-header">Personal Information</div>
-                <div class="card-body row g-3">
-                  <div class="col-md-6">
-                    <label for="firstName" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="firstName">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="lastName" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="lastName">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="ssn" class="form-label">Social Security Number</label>
-                    <input type="text" class="form-control" id="ssn">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="address" class="form-label">Street Address</label>
-                    <input type="text" class="form-control" id="address">
-                  </div>
-                  <div class="col-md-4">
-                    <label for="city" class="form-label">City</label>
-                    <input type="text" class="form-control" id="city">
-                  </div>
-                  <div class="col-md-4">
-                    <label for="state" class="form-label">State</label>
-                    <input type="text" class="form-control" id="state">
-                  </div>
-                  <div class="col-md-4">
-                    <label for="zip" class="form-label">ZIP Code</label>
-                    <input type="text" class="form-control" id="zip">
-                  </div>
-                </div>
-              </div>
-        
-              <div class="card my-4">
-                <div class="card-header">Income</div>
-                <div class="card-body row g-3">
-                  <div class="col-md-6">
-                    <label for="wages" class="form-label">Wages, salaries, tips</label>
-                    <input type="number" class="form-control" id="wages">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="taxableInterest" class="form-label">Taxable interest</label>
-                    <input type="number" class="form-control" id="taxableInterest">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="dividends" class="form-label">Ordinary dividends</label>
-                    <input type="number" class="form-control" id="dividends">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="iraDistributions" class="form-label">IRA distributions</label>
-                    <input type="number" class="form-control" id="iraDistributions">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="socialSecurity" class="form-label">Social security benefits</label>
-                    <input type="number" class="form-control" id="socialSecurity">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="otherIncome" class="form-label">Other income</label>
-                    <input type="number" class="form-control" id="otherIncome">
-                  </div>
-                </div>
-              </div>
-        
-              <div class="card my-4">
-                <div class="card-header">Adjustments and Deductions</div>
-                <div class="card-body row g-3">
-                  <div class="col-md-6">
-                    <label for="adjustments" class="form-label">Adjustments to income</label>
-                    <input type="number" class="form-control" id="adjustments">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="standardDeduction" class="form-label">Standard or itemized deduction</label>
-                    <input type="number" class="form-control" id="standardDeduction">
-                  </div>
-                </div>
-              </div>
-        
-              <div class="card my-4">
-                <div class="card-header">Tax and Credits</div>
-                <div class="card-body row g-3">
-                  <div class="col-md-4">
-                    <label for="taxableIncome" class="form-label">Taxable income</label>
-                    <input type="number" class="form-control" id="taxableIncome">
-                  </div>
-                  <div class="col-md-4">
-                    <label for="totalTax" class="form-label">Total tax</label>
-                    <input type="number" class="form-control" id="totalTax">
-                  </div>
-                  <div class="col-md-4">
-                    <label for="credits" class="form-label">Total credits</label>
-                    <input type="number" class="form-control" id="credits">
-                  </div>
-                </div>
-              </div>
-        
-              <div class="card my-4">
-                <div class="card-header">Payments and Refund</div>
-                <div class="card-body row g-3">
-                  <div class="col-md-4">
-                    <label for="withheld" class="form-label">Federal income tax withheld</label>
-                    <input type="number" class="form-control" id="withheld">
-                  </div>
-                  <div class="col-md-4">
-                    <label for="refund" class="form-label">Refund</label>
-                    <input type="number" class="form-control" id="refund">
-                  </div>
-                  <div class="col-md-4">
-                    <label for="amountOwed" class="form-label">Amount you owe</label>
-                    <input type="number" class="form-control" id="amountOwed">
-                  </div>
-                </div>
-              </div>
-        
-              <div class="card my-4">
-                <div class="card-header">Signature</div>
-                <div class="card-body row g-3">
-                  <div class="col-md-6">
-                    <label for="signature" class="form-label">Signature</label>
-                    <input type="text" class="form-control" id="signature">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="date" class="form-label">Date</label>
-                    <input type="date" class="form-control" id="date">
-                  </div>
-                </div>
-              </div>
-        
-              <div class="text-center mb-5">
-                <button type="submit" class="btn btn-primary">Submit Form</button>
-              </div>
-            </form>
-          </div> -->
+          <!-- </form> -->
         </div>
       </mat-drawer-content>
     </mat-drawer-container>
