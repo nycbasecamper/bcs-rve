@@ -1,47 +1,48 @@
 <div id="rve-main" class="row g-0 rve-form">
   <!-- tax-form.component.html -->
   <!-- <form class="tax-form" (ngSubmit)="onSubmit()"> -->
-    <mat-card class="p-4 mb-4 bg-light">
+    <mat-card class="p-4 mb-4">
       <mat-card-title>U.S. Individual Income Tax Return - 2024</mat-card-title>
       <hr>
       <div class="row mb-3">
-        <div class="col-md-4">
-          For the year Jan. 1-Dec. 31, 2024, or other tax year beginning
+        <div class="col-md-4 d-flex align-items-center rve-div">
+          <span class="rve-span">
+            For the year Jan. 1-Dec. 31, 2024, or other tax year beginning
+          </span>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 d-flex align-items-center rve-div">
           <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100 rve-form-field-1040">
             <mat-label>Tax year beginning</mat-label>
             <div class="input-group align-items-stretch">
-              <input
-                matInput
-                [(ngModel)]="payer.taxYearStart"
-                name="taxYearStart"
-                class="form-control"
+              <input matInput name="taxYearStart" class="form-control" [(ngModel)]="payer.taxYearStart"
                 [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
                 (focus)="setEditMode('taxYearStart', true)"
                 (blur)="setEditMode('taxYearStart', false)"
               />
-              <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditField('taxYearStart')">
+              <button class="btn btn-outline-secondary rve-pencil" 
+                type="button" (click)="onEditComment()">
                 <i class="bi bi-pencil small"></i>
               </button>
             </div>
           </mat-form-field>
-          
-        
-          
-
-          
-          <!-- <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100">
-            <mat-label>Tax year beginning</mat-label>
-            <div class="input-group align-items-center">
-              <input matInput [(ngModel)]="payer.taxYearStart" name="taxYearStart" class="form-control rve-input-editable">
-              <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditComment()">
+        </div>
+        <div class="col-md-4 d-flex align-items-center rve-div">
+          <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100 rve-form-field-1040">
+            <mat-label>Tax year ending</mat-label>
+            <div class="input-group align-items-stretch">
+              <input matInput name="taxYearEnd" class="form-control" [(ngModel)]="payer.taxYearEnd"
+                [ngClass]="{ 'bg-white': isEditing['taxYearEnd'], 'bg-lightblue': !isEditing['taxYearEnd'] }"
+                (focus)="setEditMode('taxYearEnd', true)"
+                (blur)="setEditMode('taxYearEnd', false)"
+              />
+              <button class="btn btn-outline-secondary rve-pencil" 
+                type="button" (click)="onEditComment()">
                 <i class="bi bi-pencil small"></i>
               </button>
             </div>
-          </mat-form-field> -->
+          </mat-form-field>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <mat-form-field appearance="fill" floatLabel="always"  color="accent" class="w-100">
             <mat-label>Tax year ending</mat-label>
             <div class="input-group align-items-center">
@@ -51,7 +52,7 @@
               </button>
             </div>
           </mat-form-field>
-        </div>
+        </div> -->
       </div>
 
       <div class="accordion" id="taxFormAccordion">
