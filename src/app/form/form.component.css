@@ -17,7 +17,11 @@ span {
 }
 
 .rve-span {
-  margin-top: -12px;
+  margin-top: 6px;
+}
+
+::ng-deep .no-border .mat-mdc-form-field-outline {
+  display: none !important;
 }
 
 ::ng-deep .no-subscript .mat-form-field-subscript-wrapper {
@@ -30,6 +34,11 @@ span {
 ::ng-deep .no-subscript .mat-form-field-wrapper {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none !important;
+  height: 0 !important;
 }
 
 
