@@ -1,9 +1,14 @@
 export class Person {
   taxYearStart: string = '';
+  taxYearStartComments: string = '';
   taxYearEnd: string = '';
+  taxYearEndComments: string = '';
   firstName: string = '';
+  firstNameComments: string = '';
   lastName: string = '';
+  lastNameComments: string = '';
   ssn: string = '';
+  ssnComments: string = '';
   spouseFirstName: string = '';
   spouseLastName: string = '';
   spouseSSN: string = '';
@@ -43,6 +48,8 @@ export class Person {
   yourOccupation: string = '';
   spouseOccupation: string = '';
   allowThirdParty: string = '';
+
+  comments: string = '';
 
   dependents: Array<Person> = new Array<Person>();
 }

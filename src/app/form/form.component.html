@@ -1,0 +1,525 @@
+<div id="rve-main" class="row g-0 rve-form">
+  <!-- tax-form.component.html -->
+  <!-- <form class="tax-form" (ngSubmit)="onSubmit()"> -->
+    <mat-card class="p-4 mb-4 bg-light">
+      <mat-card-title>U.S. Individual Income Tax Return - 2024</mat-card-title>
+      <hr>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          For the year Jan. 1-Dec. 31, 2024, or other tax year beginning
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100 rve-form-field-1040">
+            <mat-label>Tax year beginning</mat-label>
+            <div class="input-group align-items-stretch">
+              <input
+                matInput
+                [(ngModel)]="payer.taxYearStart"
+                name="taxYearStart"
+                class="form-control"
+                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
+                (focus)="setEditMode('taxYearStart', true)"
+                (blur)="setEditMode('taxYearStart', false)"
+              />
+              <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditField('taxYearStart')">
+                <i class="bi bi-pencil small"></i>
+              </button>
+            </div>
+          </mat-form-field>
+          
+        
+          
+
+          
+          <!-- <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100">
+            <mat-label>Tax year beginning</mat-label>
+            <div class="input-group align-items-center">
+              <input matInput [(ngModel)]="payer.taxYearStart" name="taxYearStart" class="form-control rve-input-editable">
+              <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditComment()">
+                <i class="bi bi-pencil small"></i>
+              </button>
+            </div>
+          </mat-form-field> -->
+        </div>
+        <div class="col-md-4">
+          <mat-form-field appearance="fill" floatLabel="always"  color="accent" class="w-100">
+            <mat-label>Tax year ending</mat-label>
+            <div class="input-group align-items-center">
+              <input matInput [(ngModel)]="payer.taxYearEnd" name="taxYearEnd" class="form-control rve-input-editable">
+              <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditComment()">
+                <i class="bi bi-pencil small"></i>
+              </button>
+            </div>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="accordion" id="taxFormAccordion">
+
+        <!-- Tax Year -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingYear">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseYear" aria-expanded="true" aria-controls="collapseYear">
+              Tax Year
+            </button>
+          </h2>
+          <div id="collapseYear" class="accordion-collapse collapse show" aria-labelledby="headingYear">
+            <div class="accordion-body rve-accordion-body">
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Info -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingPersonal">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePersonal" aria-expanded="false" aria-controls="collapsePersonal">
+              Personal Information
+            </button>
+          </h2>
+          <div id="collapsePersonal" class="accordion-collapse collapse show" aria-labelledby="headingPersonal">
+            <div class="accordion-body rve-accordion-body">
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100">
+                    <mat-label>Your first name and middle initial</mat-label>
+                    <div class="input-group align-items-center">
+                      <input matInput [(ngModel)]="payer.firstName" name="firstName" class="form-control rve-input-editable">
+                      <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditComment()">
+                        <i class="bi bi-pencil small"></i>
+                      </button>
+                    </div>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100">
+                    <mat-label>Last name</mat-label>
+                    <div class="input-group align-items-center">
+                      <input matInput [(ngModel)]="payer.lastName" name="lastName" class="form-control rve-input-editable">
+                      <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditComment()">
+                        <i class="bi bi-pencil small"></i>
+                      </button>
+                    </div>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100">
+                    <mat-label>Social Security Number</mat-label>
+                    <div class="input-group align-items-center">
+                      <input matInput [(ngModel)]="payer.ssn" name="ssn" class="form-control rve-input-editable">
+                      <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditComment()">
+                        <i class="bi bi-pencil small"></i>
+                      </button>
+                    </div>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100">
+                    <mat-label>Spouse's first name and middle initial</mat-label>
+                    <div class="input-group align-items-center">
+                      <input matInput [(ngModel)]="payer.spouseFirstName" name="spouseFirstName" class="form-control rve-input-editable">
+                      <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditComment()">
+                        <i class="bi bi-pencil small"></i>
+                      </button>
+                    </div>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100">
+                    <mat-label>Last name</mat-label>
+                    <div class="input-group align-items-center">
+                      <input matInput [(ngModel)]="payer.spouseLastName" name="spouseLastName" class="form-control rve-input-editable">
+                      <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditComment()">
+                        <i class="bi bi-pencil small"></i>
+                      </button>
+                    </div>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" color="accent" class="w-100">
+                    <mat-label>Spouse's Social Security Number</mat-label>
+                    <div class="input-group align-items-center">
+                      <input matInput [(ngModel)]="payer.spouseSSN" name="spouseSSN" class="form-control rve-input-editable">
+                      <button class="btn btn-outline-secondary rve-pencil" type="button" (click)="onEditComment()">
+                        <i class="bi bi-pencil small"></i>
+                      </button>
+                    </div>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <mat-form-field appearance="fill" floatLabel="always" color="primary" class="w-100 rve-float-label">
+                  <mat-label>Street Address</mat-label>
+                  <input matInput [(ngModel)]="payer.street">
+                </mat-form-field>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>City</mat-label>
+                    <input matInput [(ngModel)]="payer.city">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>State</mat-label>
+                    <input matInput [(ngModel)]="payer.state">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>ZIP code</mat-label>
+                    <input matInput [(ngModel)]="payer.zip">
+                  </mat-form-field>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Filing Status -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFiling">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiling" aria-expanded="false" aria-controls="collapseFiling">
+              Filing Status
+            </button>
+          </h2>
+          <div id="collapseFiling" class="accordion-collapse collapse show" aria-labelledby="headingFiling">
+            <div class="accordion-body rve-accordion-body">
+              <mat-radio-group [(ngModel)]="payer.filingStatus" class="d-flex flex-column gap-1">
+                <mat-radio-button value="single">Single</mat-radio-button>
+                <mat-radio-button value="mfj">Married filing jointly</mat-radio-button>
+                <mat-radio-button value="mfs">Married filing separately</mat-radio-button>
+                <mat-radio-button value="hoh">Head of Household</mat-radio-button>
+                <mat-radio-button value="qss">Qualifying surviving spouse</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital Assets -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingAssets">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAssets" aria-expanded="false" aria-controls="collapseAssets">
+              Digital Assets
+            </button>
+          </h2>
+          <div id="collapseAssets" class="accordion-collapse collapse show" aria-labelledby="headingAssets">
+            <div class="accordion-body rve-accordion-body">
+              <mat-radio-group [(ngModel)]="payer.digitalAssets">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+
+        <!-- Standard Deduction -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingDeduction">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDeduction" aria-expanded="false" aria-controls="collapseDeduction">
+              Standard Deduction
+            </button>
+          </h2>
+          <div id="collapseDeduction" class="accordion-collapse collapse show" aria-labelledby="headingDeduction">
+            <div class="accordion-body rve-accordion-body">
+              <div class="d-flex flex-column gap-1">
+                <mat-checkbox [(ngModel)]="payer.claimedAsDependent">Someone can claim you as a dependent</mat-checkbox>
+                <mat-checkbox [(ngModel)]="payer.claimedSpouse">Someone can claim your spouse</mat-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Age/Blindness -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingAge">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAge" aria-expanded="false" aria-controls="collapseAge">
+              Age and Blindness
+            </button>
+          </h2>
+          <div id="collapseAge" class="accordion-collapse collapse show" aria-labelledby="headingAge">
+            <div class="accordion-body rve-accordion-body">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <mat-checkbox [(ngModel)]="payer.youOlder">You were born before Jan 2, 1960</mat-checkbox><br>
+                  <mat-checkbox [(ngModel)]="payer.youBlind">You are blind</mat-checkbox>
+                </div>
+                <div class="col-md-6">
+                  <mat-checkbox [(ngModel)]="payer.spouseOlder">Spouse was born before Jan 2, 1960</mat-checkbox><br>
+                  <mat-checkbox [(ngModel)]="payer.spouseBlind">Spouse is blind</mat-checkbox>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dependents -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingDependents">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDependents" aria-expanded="false" aria-controls="collapseDependents">
+              Dependents
+            </button>
+          </h2>
+          <div id="collapseDependents" class="accordion-collapse collapse show" aria-labelledby="headingDependents">
+            <div class="accordion-body rve-accordion-body">
+              <div *ngFor="let dep of payer.dependents; let i = index" class="row mb-3">
+                <div class="row mb-3">
+                  <div class="col-md-3">
+                    <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                      <mat-label>First Name</mat-label>
+                      <input matInput [(ngModel)]="dep.firstName">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-3">
+                    <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                      <mat-label>Last Name</mat-label>
+                      <input matInput [(ngModel)]="dep.lastName">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-3">
+                    <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                      <mat-label>SSN</mat-label>
+                      <input matInput [(ngModel)]="dep.ssn">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-md-3">
+                    <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                      <mat-label>Relationship</mat-label>
+                      <input matInput [(ngModel)]="dep.relationship">
+                    </mat-form-field>
+                    <mat-checkbox [(ngModel)]="dep.childTaxCredit">Child Tax Credit</mat-checkbox>
+                    <mat-checkbox [(ngModel)]="dep.otherDependentCredit">Other Dependent Credit</mat-checkbox>
+                  </div>
+                </div>
+              </div>
+              <button mat-stroked-button type="button" (click)="addDependent()">Add Dependent</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Income -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingIncome">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIncome" aria-expanded="false" aria-controls="collapseIncome">
+              Income
+            </button>
+          </h2>
+          <div id="collapseIncome" class="accordion-collapse collapse show" aria-labelledby="headingIncome">
+            <div class="accordion-body rve-accordion-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>W-2 Wages (Line 1a)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.wages1a">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Tip Income (Line 1c)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.tips1c">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Taxable Interest (2b)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.interest2b">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Ordinary Dividends (3b)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.dividends3b">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>IRA Distributions (4b)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.ira4b">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Social Security (6b)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.ss6b">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-12">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Total Income (Line 9)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.totalIncome">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tax and Credits -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTax">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTax" aria-expanded="false" aria-controls="collapseTax">
+              Tax and Credits
+            </button>
+          </h2>
+          <div id="collapseTax" class="accordion-collapse collapse show" aria-labelledby="headingTax">
+            <div class="accordion-body rve-accordion-body">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Total Tax (Line 24)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.totalTax">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Child Tax Credit (Line 19)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.childTaxCredit">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payments & Refund -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingPayments">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePayments" aria-expanded="false" aria-controls="collapsePayments">
+              Payments & Refund
+            </button>
+          </h2>
+          <div id="collapsePayments" class="accordion-collapse collapse show" aria-labelledby="headingPayments">
+            <div class="accordion-body rve-accordion-body">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Federal Tax Withheld (Line 25d)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.withheldTax">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Refund Amount (Line 35a)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.refundAmount">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Routing Number</mat-label>
+                    <input matInput [(ngModel)]="payer.routingNumber">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Account Number</mat-label>
+                    <input matInput [(ngModel)]="payer.accountNumber">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amount You Owe -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOwe">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOwe" aria-expanded="false" aria-controls="collapseOwe">
+              Amount You Owe
+            </button>
+          </h2>
+          <div id="collapseOwe" class="accordion-collapse collapse show" aria-labelledby="headingOwe">
+            <div class="accordion-body rve-accordion-body">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Amount You Owe (Line 37)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.amountOwed">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Estimated Tax Penalty (Line 38)</mat-label>
+                    <input matInput type="number" [(ngModel)]="payer.estimatedPenalty">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Third Party Designee -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingDesignee">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDesignee" aria-expanded="false" aria-controls="collapseDesignee">
+              Third Party Designee
+            </button>
+          </h2>
+          <div id="collapseDesignee" class="accordion-collapse collapse show" aria-labelledby="headingDesignee">
+            <div class="accordion-body rve-accordion-body">
+              <mat-checkbox [(ngModel)]="payer.designeePermission">Allow a third party to discuss this return with the IRS</mat-checkbox>
+              <div class="row mt-3">
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Designee Name</mat-label>
+                    <input matInput [(ngModel)]="payer.designeeName">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput [(ngModel)]="payer.designeePhone">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Designee PIN</mat-label>
+                    <input matInput [(ngModel)]="payer.designeePIN">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Signatures -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingSignatures">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSignatures" aria-expanded="false" aria-controls="collapseSignatures">
+              Signatures & Preparer Info
+            </button>
+          </h2>
+          <div id="collapseSignatures" class="accordion-collapse collapse show" aria-labelledby="headingSignatures">
+            <div class="accordion-body rve-accordion-body">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Your Occupation</mat-label>
+                    <input matInput [(ngModel)]="payer.yourOccupation">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field appearance="fill" floatLabel="always" class="w-100">
+                    <mat-label>Spouse Occupation</mat-label>
+                    <input matInput [(ngModel)]="payer.spouseOccupation">
+                  </mat-form-field>
+                </div>
+              </div>
+              <mat-checkbox [(ngModel)]="payer.allowThirdParty">I authorize a third party to discuss this return with the IRS</mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="text-center mt-4">
+        <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+      </div>
+
+    </mat-card>
+  <!-- </form> -->
+</div>

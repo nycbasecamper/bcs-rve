@@ -1,0 +1,122 @@
+
+
+
+
+::ng-deep .rve-form-field-1040 .mat-form-field-label {
+  background-color: white;
+  color: #000; /* force label color */
+  padding: 0 4px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+::ng-deep .rve-form-field-1040 .mat-form-field-flex {
+  background-color: transparent !important;
+  border-radius: 0;
+  box-shadow: none;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.bg-lightblue {
+  background-color: #e8f0fe !important;
+}
+
+.bg-white {
+  background-color: white !important;
+}
+
+.rve-pencil.btn {
+  height: 100%;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mat-card-title {
+  color: var(--bs-dark);
+}
+
+input {
+  color: var(--bs-dark);
+}
+
+.rve-form {
+  color: var(--bs-dark);
+}
+
+/* .form-container {
+  color: red;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+} */
+
+/* .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+} */
+
+
+
+/* .mat-form-field-appearance-fill .mat-form-field-flex {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  min-height: 40px !important;
+}
+
+::ng-deep .rve-float-label .mat-form-field-label {
+  color: #198754 !important;
+}
+
+.mat-input-element {
+  font-size: 14px !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  line-height: 1.2;
+}
+
+.rve-input-editable {
+  height: 40px;
+}
+
+.rve-pencil {
+  height: 40px; padding: 0 10px;
+} */
