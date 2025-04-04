@@ -495,13 +495,57 @@
           border-collapse: collapse;
         }
 
-        td {
+        .table-lines {
           border-top: 1px solid #000000;
           border-bottom: 1px solid #000000;
         }
     </style>
       <table>
-        <tr>
+        <tr class="table-lines">
+          <td>
+            <strong>Filing Status</strong><br/>
+            Check only<br/>one box.
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>
+            <table>
+              <tr>
+                <td>
+                  <input type="checkbox" id="Single" name="Single" value="Single">
+                  <label for="Single">Single</label>
+                </td>
+                <td>
+                  <input type="checkbox" id="HOH" name="HOH" value="HOH">
+                  <label for="HOH">Head of household (HOH)</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" id="jointly" name="jointly" value="jointly">
+                  <label for="jointly">Married filing jointly (even if only one had income)</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" id="MFS" name="MFS" value="MFS">
+                  <label for="MFS">Married filing separately (MFS)</label>
+                </td>
+                <td>
+                  <input type="checkbox" id="QSS" name="QSS" value="QSS">
+                  <label for="QSS">Qualifying surviving spouse (QSS)</label>
+                </td>
+              </tr>
+            </table>
+            <label for="spouseName">If you checked the MFS box, enter the name of your spouse. If you checked the HOH or QSS box, enter the child’s name if the<br/>
+              qualifying person is a child but not your dependent:</label>
+            <input type="text" id="spouseName" name="spouseName"><br/>
+            <input type="checkbox" id="alienSpouse" name="alienSpouse" value="alienSpouse">
+            <label for="alienSpouse">If treating a nonresident alien or dual-status alien spouse as a U.S. resident for the entire tax year, check the box and enter<br/>
+              their name (see instructions and attach statement if required):</label>
+              <input type="text" id="statement" name="statement"><br/>
+          </td>
+        </tr>
+        <tr class="table-lines">
           <td><strong>Digital</strong><br/><strong>Assets</strong></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td>At any time during 2024, did you: (a) receive (as a reward, award, or payment for property or services); or (b) sell, <br/>
@@ -515,7 +559,7 @@
         <tr>
           <td><strong>Standard</strong><br/><strong>Deduction</strong></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td>
+          <td class="table-lines">
             <strong>Someone can claim:</strong>
             <input type="checkbox" id="dependent" name="dependent" value="dependent">
             <label for="Dependent">You as a dependent</label>
@@ -526,10 +570,10 @@
             <label for="spouseItems">Spouse itemizes on a separate return or you were a dual-status alien</label>
           </td>
         </tr>
-        <tr>
+        <tr >
           <td><strong>Age/Blindness</strong></td>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td>
+          <td class="table-lines">
             <strong>You: </strong>
             <input type="checkbox" id="bornBefore" name="bornBefore" value="bornBefore">
             <label for="bornBefore">Were born before January 2, 1960 &nbsp;&nbsp;</label>
