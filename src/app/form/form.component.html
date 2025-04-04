@@ -514,6 +514,59 @@
           </div>
         </div>
       </div>
+      <style>
+        table {
+          border-collapse: collapse;
+        }
+
+        td {
+          border-top: 1px solid #000000;
+          border-bottom: 1px solid #000000;
+        }
+    </style>
+      <table>
+        <tr>
+          <td><strong>Digital</strong><br/><strong>Assets</strong></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>At any time during 2024, did you: (a) receive (as a reward, award, or payment for property or services); or (b) sell, <br/>
+            exchange, or otherwise dispose of a digital asset (or a financial interest in a digital asset)? (See instructions.) &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" id="Yes" name="Yes" value="Yes">
+            <label for="Yes"> <strong>Yes</strong></label>
+            <input type="checkbox" id="No" name="No" value="No">
+            <label for="No"><strong>No</strong></label>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Standard</strong><br/><strong>Deduction</strong></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>
+            <strong>Someone can claim:</strong>
+            <input type="checkbox" id="dependent" name="dependent" value="dependent">
+            <label for="Dependent">You as a dependent</label>
+            <input type="checkbox" id="spouseDependent" name="spouseDependent" value="spouseDependent">
+            <label for="spouseDependent">Your spouse as a dependents</label>
+            <br/>
+            <input type="checkbox" id="spouseItems" name="spouseItems" value="spouseItems">
+            <label for="spouseItems">Spouse itemizes on a separate return or you were a dual-status alien</label>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Age/Blindness</strong></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>
+            <strong>You: </strong>
+            <input type="checkbox" id="bornBefore" name="bornBefore" value="bornBefore">
+            <label for="bornBefore">Were born before January 2, 1960 &nbsp;&nbsp;</label>
+            <input type="checkbox" id="blind" name="blind" value="blind">
+            <label for="blind">Are blind</label>
+            <strong>&nbsp;&nbsp;&nbsp;&nbsp; Spouse: </strong>
+            <input type="checkbox" id="spouseBornBefore" name="spouseBornBefore" value="spouseBornBefore">
+            <label for="spouseBornBefore">Was born before January 2, 1960 &nbsp;&nbsp;</label>
+            <input type="checkbox" id="spouseBlind" name="spouseBlind" value="spouseBlind">
+            <label for="spouseBlind">Is blind</label>
+          </td>
+        </tr>
+      </table>
 
       <!-- Submit -->
       <div class="text-center mt-4">
