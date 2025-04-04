@@ -6,14 +6,32 @@ span {
   font-size: 14px;
 }
 
+#rve-main {
+  overflow-y: auto;
+  height: calc(100vh - 76px);
+}
+
 .rve-div {
-  padding-top: 2px;
-  padding-bottom: 2px;;
+  /* padding-top: 2px;
+  padding-bottom: 2px; */
 }
 
 .rve-span {
   margin-top: -12px;
 }
+
+::ng-deep .no-subscript .mat-form-field-subscript-wrapper {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+::ng-deep .no-subscript .mat-form-field-wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 
 
 
@@ -37,12 +55,25 @@ span {
   background-color: #d0e0fc !important;
 }
 
+.bg-lightgreen {
+  background-color: #e6f9f8;
+}
+
 .bg-white {
   background-color: white !important;
 }
 
+.form-control {
+  width: 75px;
+}
+
+.rve-currency {
+  height: 15px;
+}
+
+
+
 .rve-pencil.btn {
-  /* height: 100%; */
   border: none;
   padding: 0 0.5rem;
   font-size: 0.75rem;

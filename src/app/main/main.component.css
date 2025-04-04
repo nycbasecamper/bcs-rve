@@ -81,10 +81,10 @@
   transform: rotate(270deg);
 }
 
-#rve-main {
+/* #rve-main {
   overflow-y: auto;
   height: calc(100vh - 76px);
-}
+} */
 
 mat-drawer-content {
   overflow: visible !important;
@@ -93,6 +93,7 @@ mat-drawer-content {
 .rve-tools-drawer {
   width: 300px;
   position: absolute;
+  background-color: var(--bs-dark);
   height: calc(100vh - 76px);
 }
 
