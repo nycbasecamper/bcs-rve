@@ -591,7 +591,7 @@
         <tr>
                   <td></td>
           <td><strong>33</strong></td>
-                  <td> Add lines 25d, 26, and 32. These are your <strong>total payments</strong></td>
+                  <td>Add lines 25d, 26, and 32. These are your <strong>total payments</strong></td>
                   <td></td>
           <td colspan="5"></td>
           <td><strong>33</strong></td>
@@ -599,7 +599,25 @@
               </tr>
           </table>
           <hr>
-
+          <table>
+            <tr>
+                      <td><strong>Amount<br>You Owe</strong></td>
+              <td><strong>37</strong><br>&nbsp;</td>
+                      <td>Subtract line 33 from line 24. This is the <strong>amount you owe.</strong><br>For details on how to pay, go to www.irs.gov/Payments or see instructions</td>
+                      <td></td>
+              <td colspan="5"></td>
+              <td><br><strong>37</strong></td>
+              <td colspan="5"><br><input type="text" name="line_24"></td>
+                  </tr>
+            <tr>
+                      <td></td>
+              <td><strong>38</strong></td>
+                      <td>Estimated tax penalty (see instructions)</td>
+              <td><strong>38</strong></td>
+              <td colspan="5"><input type="text" name="line_24"></td>
+                  </tr>
+          </table>
+          <hr>
       <!-- Submit -->
       <div class="text-center mt-4">
         <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
