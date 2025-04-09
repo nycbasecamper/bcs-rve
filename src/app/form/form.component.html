@@ -216,8 +216,8 @@
           </td>
         </tr>
         <tr>
-          <td><strong>Standard</strong><br/><strong>Deduction</strong></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td style="border-bottom: solid black 1px;"><strong>Standard</strong><br/><strong>Deduction</strong></td>
+          <td style="border-bottom: solid black 1px;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td class="table-lines bg-lightgreen">
             <strong>Someone can claim:</strong>
             <input type="checkbox" id="dependent" name="dependent" value="dependent">
@@ -230,8 +230,8 @@
           </td>
         </tr>
         <tr >
-          <td><strong>Age/Blindness</strong></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td style="border-bottom: solid black 1px;"><strong>Age/Blindness</strong></td>
+          <td style="border-bottom: solid black 1px;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
           <td class="table-lines bg-lightgreen">
             <strong>You: </strong>
             <input type="checkbox" id="bornBefore" name="bornBefore" value="bornBefore">
@@ -247,9 +247,9 @@
         </tr>
       </table>
 
-      <table>
+      <table style="width: 100%;">
         <tr>
-          <td rowspan="25" style="width: 170px; vertical-align: top;"><strong>Income</strong></td>
+          <td rowspan="25" style="width: 170px; vertical-align: top; border-bottom: solid black 1px;"><strong>Income</strong></td>
           <td class="bg-lightgreen">1a</td>
           <td class="bg-lightgreen">Total amount from Form(s) W-2, box 1 (see instructions) . . . . . . . . . . . . .</td>
           <td class="bg-lightgreen">1a</td>
@@ -412,10 +412,10 @@
           </td>
         </tr>
         <tr>
-          <td class="bg-lightgreen">i</td>
-          <td class="bg-lightgreen">Nontaxable combat pay election (see instructions) . . . . . . .</td>
-          <td class="bg-lightgreen">1i</td>
-          <td class="bg-lightgreen">
+          <td class="bg-lightgreen" style="border-bottom: solid 1px black;">i</td>
+          <td class="bg-lightgreen" style="border-bottom: solid 1px black;">Nontaxable combat pay election (see instructions) . . . . . . .</td>
+          <td class="bg-lightgreen" style="border-bottom: solid 1px black;">1i</td>
+          <td class="bg-lightgreen" style="border-bottom: solid 1px black;">
             <div class="input-group">
               <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
                 [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
@@ -430,144 +430,79 @@
           </td>
         </tr>
       </table>
-      <hr>
-		  <table>
-            <tr>
-                <td><strong>Tax and</strong></td>
-				<td><strong>16</strong></td>
-                <td><strong>Tax</strong> (see instructions). Check if any from Form(s): &nbsp;&nbsp;<strong>1</strong> <input type="checkbox" name="form1"> 8814 &nbsp;&nbsp;&nbsp;&nbsp;<strong>2</strong> <input type="checkbox" name="form2"> 4972 &nbsp;&nbsp;&nbsp;&nbsp;<strong>3</strong> <input type="checkbox" name="form3"><input type="text" name="form_other"></td>
-                <td>16</td>
-				<td colspan="5"><input type="text" name="line_18"></td>
-            </tr>
-            <tr>
-                <td><strong>Credits</strong></td>
-				<td><strong>17</strong></td>
-                <td>Amount from Schedule 2, line 3</td>
-                <td>17</td>
-				<td colspan="5"><input type="text" name="line_17"></td>
-            </tr>
-            <tr>
-                <td></td>
-				<td><strong>18</strong></td>
-                <td>Add lines 16 and 17</td>
-				<td>18</td>
-                <td colspan="5"><input type="text" name="line_18"></td>
-            </tr>
-            <tr>
-                <td></td>
-				<td><strong>19</strong></td>
-                <td>Child tax credit or credit for other dependents from Schedule 8812</td>
-                <td>19</td>
-				<td colspan="5"><input type="text" name="line_19"></td>
-            </tr>
-            <tr>
-                <td></td>
-				<td><strong>20</strong></td>
-                <td>Amount from Schedule 3, line 8</td>
-                <td>20</td>
-				<td colspan="5"><input type="text" name="line_20"></td>
-            </tr>
-            <tr>
-                <td></td>
-				<td><strong>21</strong></td>
-                <td> Add lines 19 and 20</td>
-                <td>21</td>
-				<td colspan="5"><input type="text" name="line_21"></td>
-            </tr>
-            <tr>
-                <td></td>
-				<td><strong>22</strong></td>
-                <td>Subtract line 21 from line 18. If zero or less, enter -0-</td>
-                <td>22</td>
-				<td colspan="5"><input type="text" name="line_22"></td>
-            </tr>
-            <tr>
-                <td></td>
-				<td><strong>23</strong></td>
-                <td>Other taxes, including self-employment tax, from Schedule 2, line 21</td>
-                <td>23</td>
-				<td colspan="5"><input type="text" name="line_23"></td>
-            </tr>
-            <tr>
-                <td></td>
-				<td><strong>24</strong></td>
-                <td>Add lines 22 and 23. This is your <strong>total tax</strong></td>
-                <td>24</td>
-				<td colspan="5"><input type="text" name="line_24"></td>
-            </tr>
-        </table>
-
+      
       </div>
+
       <table>
               <tr>
-                  <td><strong>Tax and</strong></td>
-          <td><strong>16</strong></td>
-                  <td><strong>Tax</strong> (see instructions). Check if any from Form(s): &nbsp;&nbsp;<strong>1</strong> <input type="checkbox" name="form1"> 8814 &nbsp;&nbsp;&nbsp;&nbsp;<strong>2</strong> <input type="checkbox" name="form2"> 4972 &nbsp;&nbsp;&nbsp;&nbsp;<strong>3</strong> <input type="checkbox" name="form3"><input type="text" name="form_other"></td>
-                  <td><strong>16</strong></td>
-          <td colspan="5"><input type="text" name="line_18"></td>
+                  <td style="width: 170px;"><strong>Tax and</strong></td>
+          <td class="bg-lightgreen"><strong>16</strong></td>
+                  <td class="bg-lightgreen"><strong>Tax</strong> (see instructions). Check if any from Form(s): &nbsp;&nbsp;<strong>1</strong> <input type="checkbox" name="form1"> 8814 &nbsp;&nbsp;&nbsp;&nbsp;<strong>2</strong> <input type="checkbox" name="form2"> 4972 &nbsp;&nbsp;&nbsp;&nbsp;<strong>3</strong> <input type="checkbox" name="form3"><input type="text" name="form_other"></td>
+                  <td  class="bg-lightgreen"><strong>16</strong></td>
+          <td colspan="5"  class="bg-lightgreen"><input type="text" name="line_18"></td>
               </tr>
               <tr>
                   <td><strong>Credits</strong></td>
-          <td><strong>17</strong></td>
-                  <td>Amount from Schedule 2, line 3</td>
-                  <td><strong>17</strong></td>
-          <td colspan="5"><input type="text" name="line_17"></td>
+          <td class="bg-lightgreen"><strong>17</strong></td>
+                  <td class="bg-lightgreen">Amount from Schedule 2, line 3</td>
+                  <td class="bg-lightgreen"><strong>17</strong></td>
+          <td colspan="5"  class="bg-lightgreen"><input type="text" name="line_17"></td>
               </tr>
               <tr>
                   <td></td>
-          <td><strong>18</strong></td>
-                  <td>Add lines 16 and 17</td>
-          <td><strong>18</strong></td>
-                  <td colspan="5"><input type="text" name="line_18"></td>
+          <td class="bg-lightgreen"><strong>18</strong></td>
+                  <td class="bg-lightgreen">Add lines 16 and 17</td>
+          <td class="bg-lightgreen"><strong>18</strong></td>
+                  <td colspan="5" class="bg-lightgreen"><input type="text" name="line_18"></td>
               </tr>
               <tr>
                   <td></td>
-          <td><strong>19</strong></td>
-                  <td>Child tax credit or credit for other dependents from Schedule 8812</td>
-                  <td><strong>19</strong></td>
-          <td colspan="5"><input type="text" name="line_19"></td>
+          <td class="bg-lightgreen"><strong>19</strong></td>
+                  <td class="bg-lightgreen">Child tax credit or credit for other dependents from Schedule 8812</td>
+                  <td class="bg-lightgreen"><strong>19</strong></td>
+          <td colspan="5" class="bg-lightgreen"><input type="text" name="line_19"></td>
               </tr>
               <tr>
                   <td></td>
-          <td><strong>20</strong></td>
-                  <td>Amount from Schedule 3, line 8</td>
-                  <td><strong>20</strong></td>
-          <td colspan="5"><input type="text" name="line_20"></td>
+          <td class="bg-lightgreen"><strong>20</strong></td>
+                  <td class="bg-lightgreen">Amount from Schedule 3, line 8</td>
+                  <td class="bg-lightgreen"><strong>20</strong></td>
+          <td colspan="5" class="bg-lightgreen"><input type="text" name="line_20"></td>
               </tr>
               <tr>
                   <td></td>
-          <td><strong>21</strong></td>
-                  <td> Add lines 19 and 20</td>
-                  <td><strong>21</strong></td>
-          <td colspan="5"><input type="text" name="line_21"></td>
+          <td class="bg-lightgreen"><strong>21</strong></td>
+                  <td class="bg-lightgreen"> Add lines 19 and 20</td>
+                  <td class="bg-lightgreen"><strong>21</strong></td>
+          <td colspan="5" class="bg-lightgreen"><input type="text" name="line_21"></td>
               </tr>
               <tr>
                   <td></td>
-          <td><strong>22</strong></td>
-                  <td>Subtract line 21 from line 18. If zero or less, enter -0-</td>
-                  <td><strong>22</strong></td>
-          <td colspan="5"><input type="text" name="line_22"></td>
+          <td class="bg-lightgreen"><strong>22</strong></td>
+                  <td class="bg-lightgreen">Subtract line 21 from line 18. If zero or less, enter -0-</td>
+                  <td class="bg-lightgreen"><strong>22</strong></td>
+          <td colspan="5" class="bg-lightgreen"><input type="text" name="line_22"></td>
               </tr>
               <tr>
                   <td></td>
-          <td><strong>23</strong></td>
-                  <td>Other taxes, including self-employment tax, from Schedule 2, line 21</td>
-                  <td><strong>23</strong></td>
-          <td colspan="5"><input type="text" name="line_23"></td>
+          <td class="bg-lightgreen"><strong>23</strong></td>
+                  <td class="bg-lightgreen">Other taxes, including self-employment tax, from Schedule 2, line 21</td>
+                  <td class="bg-lightgreen"><strong>23</strong></td>
+          <td colspan="5" class="bg-lightgreen"><input type="text" name="line_23"></td>
               </tr>
               <tr>
-                  <td></td>
-          <td><strong>24</strong></td>
-                  <td>Add lines 22 and 23. This is your <strong>total tax</strong></td>
-                  <td><strong>24</strong></td>
-          <td colspan="5"><input type="text" name="line_24"></td>
+                  <td style="border-bottom: solid 1px black;"></td>
+          <td class="bg-lightgreen" style="border-bottom: solid 1px black;"><strong>24</strong></td>
+                  <td class="bg-lightgreen" style="border-bottom: solid 1px black;">Add lines 22 and 23. This is your <strong>total tax</strong></td>
+                  <td class="bg-lightgreen" style="border-bottom: solid 1px black;"><strong>24</strong></td>
+          <td colspan="5" class="bg-lightgreen" style="border-bottom: solid 1px black;"><input type="text" name="line_24"></td>
               </tr>
           </table>
-      <hr>
+
       <table>
               <tr>
-                  <td><strong>Payments</strong></td>
-          <td><strong>25</strong></td>
+                  <td style="width: 170px;"><strong>Payments</strong></td>
+          <td ><strong>25</strong></td>
                   <td>Federal income tax withheld from:</td>
               </tr>
               <tr>
