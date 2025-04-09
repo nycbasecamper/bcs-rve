@@ -1,628 +1,110 @@
 <div id="rve-main" class="row g-0 rve-form">
-  <!-- tax-form.component.html -->
-  <!-- <form class="tax-form" (ngSubmit)="onSubmit()"> -->
-    <mat-card class="mb-4">
-      <mat-card-title class="bg-dark d-flex justify-content-center align-items-center" style="height: 58px; color: whitesmoke; text-align: center;">
-        U.S. INDIVIDUAL INCOME TAX RETURN - 2024
-      </mat-card-title>
-      <div class="p-1">
-
-      <div class="row mb-3" style="margin-bottom: 0px !important;">
-        <div class="col-md-4 d-flex align-items-center rve-div">
-          <span class="rve-span">
-            For the year Jan. 1-Dec. 31, 2024, or other tax year beginning
-          </span>
-        </div>
-        <div class="col-md-4 d-flex align-items-center rve-div" style="padding-left: 0px; padding-right: 0px;">
-          <mat-form-field class="w-100 no-border" appearance="fill" floatLabel="always" color="accent" subscriptSizing="dynamic">
-            <mat-label>Tax year beginning</mat-label>
-            <div class="input-group align-items-stretch">
-              <input matInput name="taxYearStart" class="form-control" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </mat-form-field>
-        </div>
-        <div class="col-md-4 d-flex align-items-center rve-div" style="padding-left: 0px; padding-right: 0px;">
-          <mat-form-field class="w-100" appearance="fill" floatLabel="always" color="accent" subscriptSizing="dynamic">
-            <mat-label>Tax year ending</mat-label>
-            <div class="input-group align-items-stretch">
-              <input matInput name="taxYearEnd" class="form-control" [(ngModel)]="payer.taxYearEnd"
-                [ngClass]="{ 'bg-white': isEditing['taxYearEnd'], 'bg-lightblue': !isEditing['taxYearEnd'] }"
-                (focus)="setEditMode('taxYearEnd', true)"
-                (blur)="setEditMode('taxYearEnd', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </mat-form-field>
-        </div>
-      </div>
-
-      <div class="row mb-3" style="margin-bottom: 0px !important;">
-        <div class="col-md-4 d-flex align-items-center rve-div" style="padding-left: 0px; padding-right: 0px;">
-          <mat-form-field class="w-100" appearance="fill" floatLabel="always" color="accent" subscriptSizing="dynamic">
-            <mat-label>Your first name and middle initial</mat-label>
-            <div class="input-group align-items-stretch">
-              <input matInput name="taxYearEnd" class="form-control" [(ngModel)]="payer.taxYearEnd"
-                [ngClass]="{ 'bg-white': isEditing['taxYearEnd'], 'bg-lightblue': !isEditing['taxYearEnd'] }"
-                (focus)="setEditMode('taxYearEnd', true)"
-                (blur)="setEditMode('taxYearEnd', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </mat-form-field>
-        </div>
-        <div class="col-md-4 d-flex align-items-center rve-div" style="padding-left: 0px; padding-right: 0px;">
-          <mat-form-field class="w-100" appearance="fill" floatLabel="always" color="accent" subscriptSizing="dynamic">
-            <mat-label>Last name</mat-label>
-            <div class="input-group align-items-stretch">
-              <input matInput name="taxYearEnd" class="form-control" [(ngModel)]="payer.taxYearEnd"
-                [ngClass]="{ 'bg-white': isEditing['taxYearEnd'], 'bg-lightblue': !isEditing['taxYearEnd'] }"
-                (focus)="setEditMode('taxYearEnd', true)"
-                (blur)="setEditMode('taxYearEnd', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </mat-form-field>
-        </div>
-        <div class="col-md-4 d-flex align-items-center rve-div" style="padding-left: 0px; padding-right: 0px;">
-          <mat-form-field class="w-100" appearance="fill" floatLabel="always" color="accent" subscriptSizing="dynamic">
-            <mat-label>Your social security number</mat-label>
-            <div class="input-group align-items-stretch">
-              <input matInput name="taxYearEnd" class="form-control" [(ngModel)]="payer.taxYearEnd"
-                [ngClass]="{ 'bg-white': isEditing['taxYearEnd'], 'bg-lightblue': !isEditing['taxYearEnd'] }"
-                (focus)="setEditMode('taxYearEnd', true)"
-                (blur)="setEditMode('taxYearEnd', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </mat-form-field>
-        </div>
-      </div>
-
-      <div class="row mb-3" style="margin-bottom: 0px !important;;">
-        <div class="col-md-4 d-flex align-items-center rve-div" style="padding-left: 0px; padding-right: 0px;">
-          <mat-form-field class="w-100" appearance="fill" floatLabel="always" color="accent" subscriptSizing="dynamic">
-            <mat-label>If joint return, spouse's first name and middle initial</mat-label>
-            <div class="input-group align-items-stretch">
-              <input matInput name="taxYearEnd" class="form-control" [(ngModel)]="payer.taxYearEnd"
-                [ngClass]="{ 'bg-white': isEditing['taxYearEnd'], 'bg-lightblue': !isEditing['taxYearEnd'] }"
-                (focus)="setEditMode('taxYearEnd', true)"
-                (blur)="setEditMode('taxYearEnd', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </mat-form-field>
-        </div>
-        <div class="col-md-4 d-flex align-items-center rve-div" style="padding-left: 0px; padding-right: 0px;">
-          <mat-form-field class="w-100" appearance="fill" floatLabel="always" color="accent" subscriptSizing="dynamic">
-            <mat-label>Last name</mat-label>
-            <div class="input-group align-items-stretch">
-              <input matInput name="taxYearEnd" class="form-control" [(ngModel)]="payer.taxYearEnd"
-                [ngClass]="{ 'bg-white': isEditing['taxYearEnd'], 'bg-lightblue': !isEditing['taxYearEnd'] }"
-                (focus)="setEditMode('taxYearEnd', true)"
-                (blur)="setEditMode('taxYearEnd', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </mat-form-field>
-        </div>
-        <div class="col-md-4 d-flex align-items-center rve-div" style="padding-left: 0px; padding-right: 0px;">
-          <mat-form-field class="w-100" appearance="fill" floatLabel="always" color="accent" subscriptSizing="dynamic">
-            <mat-label>Spouse's social security number</mat-label>
-            <div class="input-group align-items-stretch">
-              <input matInput name="taxYearEnd" class="form-control" [(ngModel)]="payer.taxYearEnd"
-                [ngClass]="{ 'bg-white': isEditing['taxYearEnd'], 'bg-lightblue': !isEditing['taxYearEnd'] }"
-                (focus)="setEditMode('taxYearEnd', true)"
-                (blur)="setEditMode('taxYearEnd', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </mat-form-field>
-        </div>
-      </div>
-
-      <style>
-        table {
-          border-collapse: collapse;
-        }
-
-        .table-lines {
-          border-top: 1px solid #000000;
-          border-bottom: 1px solid #000000;
-        }
-      </style>
-      <table>
-        <tr class="table-lines">
-          <td style="width: 150px; vertical-align: top;">
-            <strong>Filing Status</strong><br/>
-            Check only<br/>one box.
-          </td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td class="bg-lightgreen">
-            <table>
-              <tr>
-                <td>
-                  <input type="checkbox" id="Single" name="Single" value="Single">
-                  <label for="Single">Single</label>
-                </td>
-                <td>
-                  <input type="checkbox" id="HOH" name="HOH" value="HOH">
-                  <label for="HOH">Head of household (HOH)</label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" id="jointly" name="jointly" value="jointly">
-                  <label for="jointly">Married filing jointly (even if only one had income)</label>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" id="MFS" name="MFS" value="MFS">
-                  <label for="MFS">Married filing separately (MFS)</label>
-                </td>
-                <td>
-                  <input type="checkbox" id="QSS" name="QSS" value="QSS">
-                  <label for="QSS">Qualifying surviving spouse (QSS)</label>
-                </td>
-              </tr>
-            </table>
-            <label for="spouseName">If you checked the MFS box, enter the name of your spouse. If you checked the HOH or QSS box, enter the child’s name if the<br/>
-              qualifying person is a child but not your dependent:</label>
-            <input type="text" id="spouseName" name="spouseName"><br/>
-            <input type="checkbox" id="alienSpouse" name="alienSpouse" value="alienSpouse">
-            <label for="alienSpouse">If treating a nonresident alien or dual-status alien spouse as a U.S. resident for the entire tax year, check the box and enter<br/>
-              their name (see instructions and attach statement if required):</label>
-              <input type="text" id="statement" name="statement"><br/>
-          </td>
-        </tr>
-        <tr class="table-lines">
-          <td><strong>Digital</strong><br/><strong>Assets</strong></td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td class="bg-lightgreen">At any time during 2024, did you: (a) receive (as a reward, award, or payment for property or services); or (b) sell, <br/>
-            exchange, or otherwise dispose of a digital asset (or a financial interest in a digital asset)? (See instructions.) &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="checkbox" id="Yes" name="Yes" value="Yes">
-            <label for="Yes"> <strong>Yes</strong></label>
-            <input type="checkbox" id="No" name="No" value="No">
-            <label for="No"><strong>No</strong></label>
-          </td>
-        </tr>
-        <tr>
-          <td style="border-bottom: solid black 1px;"><strong>Standard</strong><br/><strong>Deduction</strong></td>
-          <td style="border-bottom: solid black 1px;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td class="table-lines bg-lightgreen">
-            <strong>Someone can claim:</strong>
-            <input type="checkbox" id="dependent" name="dependent" value="dependent">
-            <label for="Dependent">You as a dependent</label>
-            <input type="checkbox" id="spouseDependent" name="spouseDependent" value="spouseDependent">
-            <label for="spouseDependent">Your spouse as a dependents</label>
-            <br/>
-            <input type="checkbox" id="spouseItems" name="spouseItems" value="spouseItems">
-            <label for="spouseItems">Spouse itemizes on a separate return or you were a dual-status alien</label>
-          </td>
-        </tr>
-        <tr >
-          <td style="border-bottom: solid black 1px;"><strong>Age/Blindness</strong></td>
-          <td style="border-bottom: solid black 1px;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-          <td class="table-lines bg-lightgreen">
-            <strong>You: </strong>
-            <input type="checkbox" id="bornBefore" name="bornBefore" value="bornBefore">
-            <label for="bornBefore">Were born before January 2, 1960 &nbsp;&nbsp;</label>
-            <input type="checkbox" id="blind" name="blind" value="blind">
-            <label for="blind">Are blind</label>
-            <strong>&nbsp;&nbsp;&nbsp;&nbsp; Spouse: </strong>
-            <input type="checkbox" id="spouseBornBefore" name="spouseBornBefore" value="spouseBornBefore">
-            <label for="spouseBornBefore">Was born before January 2, 1960 &nbsp;&nbsp;</label>
-            <input type="checkbox" id="spouseBlind" name="spouseBlind" value="spouseBlind">
-            <label for="spouseBlind">Is blind</label>
-          </td>
-        </tr>
-      </table>
-
-      <table style="width: 100%;">
-        <tr>
-          <td rowspan="25" style="width: 170px; vertical-align: top; border-bottom: solid black 1px;"><strong>Income</strong></td>
-          <td class="bg-lightgreen">1a</td>
-          <td class="bg-lightgreen">Total amount from Form(s) W-2, box 1 (see instructions) . . . . . . . . . . . . .</td>
-          <td class="bg-lightgreen">1a</td>
-          <td class="bg-lightgreen">
-            <div class="input-group">
-              <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="bg-lightgreen">b</td>
-          <td class="bg-lightgreen">Household employee wages not reported on Form(s) W-2 . . . . . . . . . . . . .</td>
-          <td class="bg-lightgreen">1b</td>
-          <td class="bg-lightgreen">
-            <div class="input-group">
-              <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="bg-lightgreen">c</td>
-          <td class="bg-lightgreen">Tip income not reported on line 1a (see instructions) . . . . . . . . . . . . . .</td>
-          <td class="bg-lightgreen">1c</td>
-          <td class="bg-lightgreen">
-            <div class="input-group">
-              <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="bg-lightgreen">d</td>
-          <td class="bg-lightgreen">Medicaid waiver payments not reported on Form(s) W-2 (see instructions) . . . . . . . .</td>
-          <td class="bg-lightgreen">1d</td>
-          <td class="bg-lightgreen">
-            <div class="input-group">
-              <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="bg-lightgreen">e</td>
-          <td class="bg-lightgreen">Taxable dependent care benefits from Form 2441, line 26 . . . . . . . . . . . .</td>
-          <td class="bg-lightgreen">1e</td>
-          <td class="bg-lightgreen">
-            <div class="input-group">
-              <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="bg-lightgreen">f</td>
-          <td class="bg-lightgreen">Employer-provided adoption benefits from Form 8839, line 29 . . . . . . . . . . .</td>
-          <td class="bg-lightgreen">1f</td>
-          <td class="bg-lightgreen">
-            <div class="input-group">
-              <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="bg-lightgreen">f</td>
-          <td class="bg-lightgreen">Employer-provided adoption benefits from Form 8839, line 29 . . . . . . . . . . .</td>
-          <td class="bg-lightgreen">1f</td>
-          <td class="bg-lightgreen">
-            <div class="input-group">
-              <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="bg-lightgreen">h</td>
-          <td class="bg-lightgreen">Other earned income (see instructions) . . . . . . . . . . . . . . . . . .</td>
-          <td class="bg-lightgreen">1h</td>
-          <td class="bg-lightgreen">
-            <div class="input-group">
-              <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="bg-lightgreen">i</td>
-          <td class="bg-lightgreen">Nontaxable combat pay election (see instructions) . . . . . . .</td>
-          <td class="bg-lightgreen">1i</td>
-          <td class="bg-lightgreen">
-            <div class="input-group">
-              <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="bg-lightgreen" style="border-bottom: solid 1px black;">i</td>
-          <td class="bg-lightgreen" style="border-bottom: solid 1px black;">Nontaxable combat pay election (see instructions) . . . . . . .</td>
-          <td class="bg-lightgreen" style="border-bottom: solid 1px black;">1i</td>
-          <td class="bg-lightgreen" style="border-bottom: solid 1px black;">
-            <div class="input-group">
-              <input matInput name="taxYearStart" class="form-control rve-currency" [(ngModel)]="payer.taxYearStart"
-                [ngClass]="{ 'bg-white': isEditing['taxYearStart'], 'bg-lightblue': !isEditing['taxYearStart'] }"
-                (focus)="setEditMode('taxYearStart', true)"
-                (blur)="setEditMode('taxYearStart', false)"
-              />
-              <button class="btn btn-outline-secondary rve-pencil" 
-                type="button" (click)="onEditComment()">
-                <i class="bi bi-pencil small"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-      </table>
-      
-      </div>
-
-      <table>
-              <tr>
-                  <td style="width: 170px;"><strong>Tax and</strong></td>
-          <td class="bg-lightgreen"><strong>16</strong></td>
-                  <td class="bg-lightgreen"><strong>Tax</strong> (see instructions). Check if any from Form(s): &nbsp;&nbsp;<strong>1</strong> <input type="checkbox" name="form1"> 8814 &nbsp;&nbsp;&nbsp;&nbsp;<strong>2</strong> <input type="checkbox" name="form2"> 4972 &nbsp;&nbsp;&nbsp;&nbsp;<strong>3</strong> <input type="checkbox" name="form3"><input type="text" name="form_other"></td>
-                  <td  class="bg-lightgreen"><strong>16</strong></td>
-          <td colspan="5"  class="bg-lightgreen"><input type="text" name="line_18"></td>
-              </tr>
-              <tr>
-                  <td><strong>Credits</strong></td>
-          <td class="bg-lightgreen"><strong>17</strong></td>
-                  <td class="bg-lightgreen">Amount from Schedule 2, line 3</td>
-                  <td class="bg-lightgreen"><strong>17</strong></td>
-          <td colspan="5"  class="bg-lightgreen"><input type="text" name="line_17"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td class="bg-lightgreen"><strong>18</strong></td>
-                  <td class="bg-lightgreen">Add lines 16 and 17</td>
-          <td class="bg-lightgreen"><strong>18</strong></td>
-                  <td colspan="5" class="bg-lightgreen"><input type="text" name="line_18"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td class="bg-lightgreen"><strong>19</strong></td>
-                  <td class="bg-lightgreen">Child tax credit or credit for other dependents from Schedule 8812</td>
-                  <td class="bg-lightgreen"><strong>19</strong></td>
-          <td colspan="5" class="bg-lightgreen"><input type="text" name="line_19"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td class="bg-lightgreen"><strong>20</strong></td>
-                  <td class="bg-lightgreen">Amount from Schedule 3, line 8</td>
-                  <td class="bg-lightgreen"><strong>20</strong></td>
-          <td colspan="5" class="bg-lightgreen"><input type="text" name="line_20"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td class="bg-lightgreen"><strong>21</strong></td>
-                  <td class="bg-lightgreen"> Add lines 19 and 20</td>
-                  <td class="bg-lightgreen"><strong>21</strong></td>
-          <td colspan="5" class="bg-lightgreen"><input type="text" name="line_21"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td class="bg-lightgreen"><strong>22</strong></td>
-                  <td class="bg-lightgreen">Subtract line 21 from line 18. If zero or less, enter -0-</td>
-                  <td class="bg-lightgreen"><strong>22</strong></td>
-          <td colspan="5" class="bg-lightgreen"><input type="text" name="line_22"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td class="bg-lightgreen"><strong>23</strong></td>
-                  <td class="bg-lightgreen">Other taxes, including self-employment tax, from Schedule 2, line 21</td>
-                  <td class="bg-lightgreen"><strong>23</strong></td>
-          <td colspan="5" class="bg-lightgreen"><input type="text" name="line_23"></td>
-              </tr>
-              <tr>
-                  <td style="border-bottom: solid 1px black;"></td>
-          <td class="bg-lightgreen" style="border-bottom: solid 1px black;"><strong>24</strong></td>
-                  <td class="bg-lightgreen" style="border-bottom: solid 1px black;">Add lines 22 and 23. This is your <strong>total tax</strong></td>
-                  <td class="bg-lightgreen" style="border-bottom: solid 1px black;"><strong>24</strong></td>
-          <td colspan="5" class="bg-lightgreen" style="border-bottom: solid 1px black;"><input type="text" name="line_24"></td>
-              </tr>
-          </table>
-
-      <table>
-              <tr>
-                  <td style="width: 170px;"><strong>Payments</strong></td>
-          <td ><strong>25</strong></td>
-                  <td>Federal income tax withheld from:</td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td><strong>&nbsp;&nbsp;&nbsp;a</strong></td>
-                  <td>Form(s) W-2</td>
-                  <td><strong>25a</strong></td>
-          <td colspan="5"><input type="text" name="line_17"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td><strong>&nbsp;&nbsp;&nbsp;b</strong></td>
-                  <td>Form(s) 1099</td>
-          <td><strong>25b</strong></td>
-                  <td colspan="5"><input type="text" name="line_18"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td><strong>&nbsp;&nbsp;&nbsp;c</strong></td>
-                  <td>Other forms (see instructions)</td>
-                  <td><strong>25c</strong></td>
-          <td colspan="5"><input type="text" name="line_19"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td><strong>&nbsp;&nbsp;&nbsp;d</strong></td>
-                  <td>Add lines 25a through 25c</td>
-          <td></td>
-          <td colspan="5"></td>
-                  <td><strong>25d</strong></td>
-          <td colspan="5"><input type="text" name="line_20"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td><strong>26</strong></td>
-                  <td>2024 estimated tax payments and amount applied from 2023 return</td>
-                  <td></td>
-          <td colspan="5"></td>
-          <td><strong>26</strong></td>
-          <td colspan="5"><input type="text" name="line_21"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td><strong>27</strong></td>
-                  <td>Earned income credit (EIC)</td>
-                  <td><strong>27</strong></td>
-          <td colspan="5"><input type="text" name="line_22"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td><strong>28</strong></td>
-                  <td>Additional child tax credit from Schedule 8812</td>
-                  <td><strong>28</strong></td>
-          <td colspan="5"><input type="text" name="line_23"></td>
-              </tr>
-              <tr>
-                  <td></td>
-          <td><strong>29</strong></td>
-                  <td>American opportunity credit from Form 8863, line 8</td>
-                  <td><strong>29</strong></td>
-          <td colspan="5"><input type="text" name="line_24"></td>
-              </tr>
-        <tr>
-                  <td></td>
-          <td><strong>30</strong></td>
-                  <td>Reserved for future use</td>
-                  <td><strong>30</strong></td>
-          <td></td>
-              </tr>
-        <tr>
-                  <td></td>
-          <td><strong>31</strong></td>
-                  <td>Amount from Schedule 3, line 15</td>
-                  <td><strong>31</strong></td>
-          <td colspan="5"><input type="text" name="line_24"></td>
-              </tr>
-        <tr>
-                  <td></td>
-          <td><strong>32</strong></td>
-                  <td>Add lines 27, 28, 29, and 31. This is your <strong>total other payments and refundable credits</strong></td>
-                  <td></td>
-          <td colspan="5"></td>
-          <td><strong>32</strong></td>
-          <td colspan="5"><input type="text" name="line_24"></td>
-              </tr>
-        <tr>
-                  <td></td>
-          <td><strong>33</strong></td>
-                  <td>Add lines 25d, 26, and 32. These are your <strong>total payments</strong></td>
-                  <td></td>
-          <td colspan="5"></td>
-          <td><strong>33</strong></td>
-          <td colspan="5"><input type="text" name="line_24"></td>
-              </tr>
-          </table>
-          <hr>
-          <table>
-            <tr>
-                      <td><strong>Amount<br>You Owe</strong></td>
-              <td><strong>37</strong><br>&nbsp;</td>
-                      <td>Subtract line 33 from line 24. This is the <strong>amount you owe.</strong><br>For details on how to pay, go to www.irs.gov/Payments or see instructions</td>
-                      <td></td>
-              <td colspan="5"></td>
-              <td><br><strong>37</strong></td>
-              <td colspan="5"><br><input type="text" name="line_24"></td>
-                  </tr>
-            <tr>
-                      <td></td>
-              <td><strong>38</strong></td>
-                      <td>Estimated tax penalty (see instructions)</td>
-              <td><strong>38</strong></td>
-              <td colspan="5"><input type="text" name="line_24"></td>
-                  </tr>
-          </table>
-          <hr>
-      <!-- Submit -->
-      <div class="text-center mt-4">
-        <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
-      </div>
-
-    </mat-card>
-  <!-- </form> -->
+  <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .page {
+        position: relative;
+        width: 1700px;
+        height: 2200px;
+        background: url('page_1.png') no-repeat;
+        background-size: cover;
+    }
+    .field {
+        position: absolute;
+        font-size: 12px;
+        padding: 2px;
+        border: 1px solid #aaa;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+  <div class="page">
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_01[0]" value="" style="left:639.7777777777778px; top:172.22493489583334px; width:192.22220526801215px; height:27.333333333333336px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_02[0]" value="" style="left:979.7777608235677px; top:172.22493489583334px; width:192.22220526801215px; height:27.333333333333336px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_03[0]" value="" style="left:1232.0000339084202px; top:172.22493489583334px; width:48.88885498046875px; height:27.333333333333336px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_04[0]" value="" style="left:112.0px; top:244.44715711805554px; width:537.9166836208767px; height:32.89177110460069px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_05[0]" value="" style="left:674.7777947319878px; top:244.44715711805554px; width:615.1388719346788px; height:32.89177110460069px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_06[0]" value="" style="left:1314.7777777777778px; top:244.44715711805554px; width:277.22222222222223px; height:32.89177110460069px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_07[0]" value="" style="left:112.0px; top:311.1083984375px; width:537.9166836208767px; height:32.8916015625px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_08[0]" value="" style="left:674.7777947319878px; top:311.1083984375px; width:615.1388719346788px; height:32.8916015625px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_09[0]" value="" style="left:1314.7777777777778px; top:311.1083984375px; width:277.22222222222223px; height:32.8916015625px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_10[0]" value="" style="left:112.0px; top:377.77777777777777px; width:1037.9166836208767px; height:32.8916015625px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_11[0]" value="" style="left:1174.7777947319878px; top:377.77777777777777px; width:114.44442749023438px; height:32.8916015625px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_12[0]" value="" style="left:112.0px; top:444.44715711805554px; width:817.2222052680122px; height:32.89177110460069px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_13[0]" value="" style="left:954.7777608235677px; top:444.44715711805554px; width:154.44449530707465px; height:32.89177110460069px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_14[0]" value="" style="left:1134.777811686198px; top:444.44715711805554px; width:154.4444105360243px; height:32.89177110460069px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_15[0]" value="" style="left:112.0px; top:511.1083984375px; width:597.9167005750868px; height:32.8916015625px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_16[0]" value="" style="left:734.7778116861979px; top:511.1083984375px; width:375.1388888888889px; height:32.8916015625px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_17[0]" value="" style="left:1134.777811686198px; top:511.1083984375px; width:155.13885498046875px; height:32.8916015625px; font-size:22px; border: none;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_1[0]"  style="left:1412.0px; top:518.0555555555555px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_2[0]"  style="left:1512.0px; top:518.0555555555555px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_3[0]"  style="left:297.5527877807617px; top:555.5528428819445px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_3[1]"  style="left:997.5528089735243px; top:555.5528428819445px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_3[2]"  style="left:297.5527877807617px; top:588.8832939995659px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_3[3]"  style="left:297.5527877807617px; top:622.2222222222222px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_3[4]"  style="left:997.5528089735243px; top:620.8333333333334px;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_18[0]" value="" style="left:812.0px; top:683.3306206597222px; width:759.9999660915798px; height:27.33045111762153px; font-size:22px; border: none;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_4[0]"  style="left:1412.0px; top:769.4444444444445px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_4[1]"  style="left:1512.0px; top:769.4444444444445px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_5[0]"  style="left:517.552758110894px; top:805.552758110894px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_6[0]"  style="left:797.5528089735243px; top:805.552758110894px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_7[0]"  style="left:277.5527750651042px; top:838.8832939995659px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_8[0]"  style="left:337.55277082655164px; top:887.4944051106771px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_9[0]"  style="left:737.5527920193142px; top:887.4944051106771px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_10[0]"  style="left:1017.552758110894px; top:887.4944051106771px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].c1_11[0]"  style="left:1417.552758110894px; top:887.4944051106771px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Dependents_ReadOrder[0].c1_12[0]"  style="left:233.38610415988498px; top:1086.105516221788px;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row1[0].f1_19[0]" value="" style="left:271.9999957614475px; top:983.3305358886719px; width:457.9166539510091px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row1[0].f1_20[0]" value="" style="left:751.9999830457899px; top:983.3305358886719px; width:219.99998304578992px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row1[0].f1_21[0]" value="" style="left:994.7777438693577px; top:983.3305358886719px; width:155.1389397515191px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row1[0].c1_13[0]"  style="left:1270.888922797309px; top:988.8832939995659px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row1[0].c1_14[0]"  style="left:1490.8889567057292px; top:988.8832939995659px;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row2[0].f1_22[0]" value="" style="left:271.9999957614475px; top:1016.6610717773438px; width:457.9166539510091px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row2[0].f1_23[0]" value="" style="left:751.9999830457899px; top:1016.6610717773438px; width:219.99998304578992px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row2[0].f1_24[0]" value="" style="left:994.7777438693577px; top:1016.6610717773438px; width:155.1389397515191px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row2[0].c1_15[0]"  style="left:1270.888922797309px; top:1022.2139146592882px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row2[0].c1_16[0]"  style="left:1490.8889567057292px; top:1022.2139146592882px;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row3[0].f1_25[0]" value="" style="left:271.9999957614475px; top:1049.991692437066px; width:457.9166539510091px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row3[0].f1_26[0]" value="" style="left:751.9999830457899px; top:1049.991692437066px; width:219.99998304578992px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row3[0].f1_27[0]" value="" style="left:994.7777438693577px; top:1049.991692437066px; width:155.1389397515191px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row3[0].c1_17[0]"  style="left:1270.888922797309px; top:1055.54445054796px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row3[0].c1_18[0]"  style="left:1490.8889567057292px; top:1055.54445054796px;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row4[0].f1_28[0]" value="" style="left:271.9999957614475px; top:1083.3222283257378px; width:457.9166539510091px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row4[0].f1_29[0]" value="" style="left:751.9999830457899px; top:1083.3222283257378px; width:219.99998304578992px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row4[0].f1_30[0]" value="" style="left:994.7777438693577px; top:1083.3222283257378px; width:155.1389397515191px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row4[0].c1_19[0]"  style="left:1270.888922797309px; top:1088.8749864366318px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Table_Dependents[0].Row4[0].c1_20[0]"  style="left:1490.8889567057292px; top:1088.8749864366318px;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_31[0]" value="" style="left:1412.0px; top:1116.6694641113281px; width:180.0px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_32[0]" value="" style="left:1412.0px; top:1150.0px; width:180.0px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_33[0]" value="" style="left:1412.0px; top:1183.3305358886719px; width:180.0px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_34[0]" value="" style="left:1412.0px; top:1216.6694641113281px; width:180.0px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_35[0]" value="" style="left:1412.0px; top:1250.0px; width:180.0px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_36[0]" value="" style="left:1412.0px; top:1283.3305358886719px; width:180.0px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_37[0]" value="" style="left:1412.0px; top:1316.6694641113281px; width:180.0px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_38[0]" value="" style="left:1412.0px; top:1350.0px; width:180.0px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_39[0]" value="" style="left:1151.99998304579px; top:1383.3305358886719px; width:177.91666666666666px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_40[0]" value="" style="left:1412.0px; top:1416.6694641113281px; width:180.0px; height:27.330535888671875px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_41[0]" value="" style="left:712.0px; top:1450.0px; width:177.91666666666666px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_42[0]" value="" style="left:1412.0px; top:1450.0px; width:180.0px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_43[0]" value="" style="left:712.0px; top:1483.3306206597222px; width:177.91666666666666px; height:27.33045111762153px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_44[0]" value="" style="left:1412.0px; top:1483.3306206597222px; width:180.0px; height:27.33045111762153px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_45[0]" value="" style="left:712.0px; top:1516.6693793402778px; width:177.91666666666666px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_46[0]" value="" style="left:1412.0px; top:1516.6693793402778px; width:180.0px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_47[0]" value="" style="left:712.0px; top:1550.0px; width:177.91666666666666px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_48[0]" value="" style="left:1412.0px; top:1550.0px; width:180.0px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_49[0]" value="" style="left:712.0px; top:1583.3306206597222px; width:177.91666666666666px; height:27.33045111762153px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_50[0]" value="" style="left:1412.0px; top:1583.3306206597222px; width:180.0px; height:27.33045111762153px; font-size:22px; border: none;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].c1_21[0]"  style="left:1304.2222561306423px; top:1622.2222222222222px;" />
+      <input class="field" type="checkbox" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].c1_22[0]"  style="left:1304.2222561306423px; top:1655.5528428819443px;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_51[0]" value="" style="left:1412.0px; top:1650.0px; width:180.0px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_52[0]" value="" style="left:1412.0px; top:1683.3306206597222px; width:180.0px; height:27.33045111762153px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_53[0]" value="" style="left:1412.0px; top:1716.6693793402778px; width:180.0px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_54[0]" value="" style="left:1412.0px; top:1750.0px; width:180.0px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_55[0]" value="" style="left:1412.0px; top:1783.3306206597222px; width:180.0px; height:27.33045111762153px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_56[0]" value="" style="left:1412.0px; top:1816.6693793402778px; width:180.0px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_57[0]" value="" style="left:1412.0px; top:1850.0px; width:180.0px; height:27.33062065972222px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_58[0]" value="" style="left:1412.0px; top:1883.3306206597222px; width:180.0px; height:27.33045111762153px; font-size:22px; border: none;" />
+      <input class="field" type="text" name="topmostSubform[0].Page1[0].f1_59[0]" value="" style="left:1412.0px; top:1916.6693793402778px; width:180.0px; height:27.33062065972222px; font-size:22px; border: none;" />
+  </div>
 </div>
